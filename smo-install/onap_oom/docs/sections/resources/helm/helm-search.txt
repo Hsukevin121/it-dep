@@ -1,0 +1,29 @@
+NAME                    CHART VERSION    APP VERSION    DESCRIPTION
+local/onap                    12.0.0     London         Open Network Automation Platform (ONAP)
+local/a1policymanagement      12.0.0                    ONAP A1 Policy Management
+local/aai                     12.0.0                    ONAP Active and Available Inventory
+local/cassandra               12.0.0                    ONAP cassandra
+local/cds                     12.0.0                    ONAP Controller Design Studio (CDS)
+local/cli                     12.0.0                    ONAP Command Line Interface
+local/common                  12.0.0                    Common templates for inclusion in other charts
+local/cps                     12.0.0                    ONAP Configuration Persistene Service (CPS)
+local/dcaegen2                12.0.0                    ONAP DCAE Gen2
+local/dmaap                   12.0.0                    ONAP DMaaP components
+local/mariadb-galera          12.0.0                    Chart for MariaDB Galera cluster
+local/msb                     12.0.0                    ONAP MicroServices Bus
+local/multicloud              12.0.0                    ONAP multicloud broker
+local/nbi                     12.0.0                    ONAP Northbound Interface
+local/nfs-provisioner         12.0.0                    NFS provisioner
+local/oof                     12.0.0                    ONAP Optimization Framework
+local/policy                  12.0.0                    ONAP Policy Administration Point
+local/postgres                12.0.0                    ONAP Postgres Server
+local/robot                   12.0.0                    A helm Chart for kubernetes-ONAP Robot
+local/sdc                     12.0.0                    Service Design and Creation Umbrella Helm charts
+local/sdnc                    12.0.0                    SDN Controller
+local/sdnc-prom               12.0.0                    ONAP SDNC Policy Driven Ownership Management
+local/sniro-emulator          12.0.0                    ONAP Mock Sniro Emulator
+local/so                      12.0.0                    ONAP Service Orchestrator
+local/strimzi                 12.0.0                    ONAP Strimzi Apache Kafka
+local/uui                     12.0.0                    ONAP uui
+local/vfc                     12.0.0                    ONAP Virtual Function Controller (VF-C)
+local/vnfsdk                  12.0.0                    ONAP VNF SDK

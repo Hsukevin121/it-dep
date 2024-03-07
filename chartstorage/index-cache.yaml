@@ -1,0 +1,4619 @@
+apiVersion: v1
+entries:
+  a1controller:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2024-03-06T06:59:25.676470008Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for nonrtric a1controller
+    digest: 86996e5a655197e1c7e5cc7b513d6e2a75b417d2828529e09631bf50112e3bac
+    name: a1controller
+    urls:
+    - charts/a1controller-2.0.0.tgz
+    version: 2.0.0
+  a1policymanagement:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:48:33.78203878Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for A1 Policy Management Service
+    digest: b63e9d08f9be56c79accaff2283768466a49d5fe73a0a2411d9ddbd11c9fdf4f
+    name: a1policymanagement
+    urls:
+    - charts/a1policymanagement-13.0.0.tgz
+    version: 13.0.0
+  a1simulator:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2024-03-06T06:59:26.123012184Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for A1 simulator
+    digest: f41d043f9b88d3289bf968f97889ebb552e4f5a34f10eebac5d21e5d660e6e52
+    name: a1simulator
+    urls:
+    - charts/a1simulator-2.1.0.tgz
+    version: 2.1.0
+  aai:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:04.885222535Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.cassandra.localCluster
+      name: cassandra
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - condition: aai-babel.enabled
+      name: aai-babel
+      repository: file://components/aai-babel
+      version: ~13.x-0
+    - condition: aai-graphadmin.enabled
+      name: aai-graphadmin
+      repository: file://components/aai-graphadmin
+      version: ~13.x-0
+    - condition: aai-modelloader.enabled
+      name: aai-modelloader
+      repository: file://components/aai-modelloader
+      version: ~13.x-0
+    - condition: aai-resources.enabled
+      name: aai-resources
+      repository: file://components/aai-resources
+      version: ~13.x-0
+    - condition: aai-schema-service.enabled
+      name: aai-schema-service
+      repository: file://components/aai-schema-service
+      version: ~13.x-0
+    - condition: aai-sparky-be.enabled
+      name: aai-sparky-be
+      repository: file://components/aai-sparky-be
+      version: ~13.x-0
+    - condition: aai-traversal.enabled
+      name: aai-traversal
+      repository: file://components/aai-traversal
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Active and Available Inventory
+    digest: 114b70c17d941f583f655216759b9016ab64ef8ca227394252514dc17ed83d34
+    name: aai
+    urls:
+    - charts/aai-13.0.0.tgz
+    version: 13.0.0
+  aai-babel:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:37.277972482Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Babel microservice
+    digest: ee1defbf550d014227b0f6bc91109f8b3425bafdbc0d14ba52e75e582c00f365
+    name: aai-babel
+    urls:
+    - charts/aai-babel-13.0.0.tgz
+    version: 13.0.0
+  aai-graphadmin:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:40.705939228Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP AAI GraphAdmin
+    digest: 36e8633d006421e713c463d2e4660b0339cd2f63c13dbd55072d22d62c206847
+    name: aai-graphadmin
+    urls:
+    - charts/aai-graphadmin-13.0.0.tgz
+    version: 13.0.0
+  aai-modelloader:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:44.12587645Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP AAI modelloader
+    digest: 1d8a8d1fb53d0132df482df153c4c06731cec66797ed2744eaf84897118bd26f
+    name: aai-modelloader
+    urls:
+    - charts/aai-modelloader-13.0.0.tgz
+    version: 13.0.0
+  aai-resources:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:47.57556074Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP AAI resources
+    digest: c8646a9c56e3a8f9d37f818bc8dcbbbe4a566a9060a7e617deb3607ca06658b5
+    name: aai-resources
+    urls:
+    - charts/aai-resources-13.0.0.tgz
+    version: 13.0.0
+  aai-schema-service:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:50.997575846Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP AAI Schema Service
+    digest: 37a7a7c7619712952dd7ae6b7ae094032eb2af9ea102d836c8678fe27e89463b
+    name: aai-schema-service
+    urls:
+    - charts/aai-schema-service-13.0.0.tgz
+    version: 13.0.0
+  aai-sparky-be:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:54.422729051Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP AAI sparky-be
+    digest: 8192519abe51c9a7fbb0384936287369a575d2fa5646397cfa87a91b586c28fe
+    name: aai-sparky-be
+    urls:
+    - charts/aai-sparky-be-13.0.0.tgz
+    version: 13.0.0
+  aai-traversal:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:57.84829825Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP AAI traversal
+    digest: 0f82ed9263eac794de6259e7df43357ff162c6a2212511b846284f545cbe43f8
+    name: aai-traversal
+    urls:
+    - charts/aai-traversal-13.0.0.tgz
+    version: 13.0.0
+  actn-simulator:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:40.296214284Z"
+    description: A Helm chart for core nssmf simulator
+    digest: 77435e08da134b9d42f6c02a2334206edb212d9701e0d2ea56688116f89e9c96
+    name: actn-simulator
+    urls:
+    - charts/actn-simulator-1.0.0.tgz
+    version: 1.0.0
+  aux-common:
+  - apiVersion: v2
+    created: "2024-03-06T06:59:24.922629583Z"
+    description: Common templates for inclusion in other charts
+    digest: a6112ea84406b21f58a7d773d376960b69eff9ef9a945f4a034fc4f2697c167a
+    name: aux-common
+    urls:
+    - charts/aux-common-3.0.0.tgz
+    version: 3.0.0
+  cassandra:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:17.345231204Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    - condition: global.cassandra.enableServiceAccount
+      name: serviceAccount
+      repository: file://../serviceAccount
+      version: ~13.x-0
+    description: ONAP cassandra
+    digest: b88a1446c310f2a3928c638dc10413a49dac98962dfc67d55b8396346518953c
+    name: cassandra
+    urls:
+    - charts/cassandra-13.0.0.tgz
+    version: 13.0.0
+  cds:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:28.98708986Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - condition: cds-blueprints-processor.enabled
+      name: cds-blueprints-processor
+      repository: file://components/cds-blueprints-processor
+      version: ~13.x-0
+    - condition: cds-command-executor.enabled
+      name: cds-command-executor
+      repository: file://components/cds-command-executor
+      version: ~13.x-0
+    - condition: cds-py-executor.enabled
+      name: cds-py-executor
+      repository: file://components/cds-py-executor
+      version: ~13.x-0
+    - condition: cds-sdc-listener.enabled
+      name: cds-sdc-listener
+      repository: file://components/cds-sdc-listener
+      version: ~13.x-0
+    - condition: cds-ui.enabled
+      name: cds-ui
+      repository: file://components/cds-ui
+      version: ~13.x-0
+    description: ONAP Controller Design Studio (CDS)
+    digest: fe01e036c0c096f089a2fe5a4698238c988ee0266a87433ec4e446cf7c9cae5e
+    name: cds
+    urls:
+    - charts/cds-13.0.0.tgz
+    version: 13.0.0
+  cds-blueprints-processor:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:08.464748206Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP CDS Blueprints Processor
+    digest: 39eab4768c0d9f6c074989517306204ddf80bc5df3fb1aec20ba2f3e0ccdc7cc
+    name: cds-blueprints-processor
+    urls:
+    - charts/cds-blueprints-processor-13.0.0.tgz
+    version: 13.0.0
+  cds-command-executor:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:11.897051781Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP CDS Command Executor
+    digest: 0eb2b3d939e0e2b78c46d9534020ee68e6dcc5db7dd42b4d67ce426c202dc9d4
+    name: cds-command-executor
+    urls:
+    - charts/cds-command-executor-13.0.0.tgz
+    version: 13.0.0
+  cds-py-executor:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:15.332866797Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP CDS Py Executor
+    digest: 00febe287814bf17ccad0b3e56bd10a41642454c954e54f4a71dbc0b2bd8222c
+    name: cds-py-executor
+    urls:
+    - charts/cds-py-executor-13.0.0.tgz
+    version: 13.0.0
+  cds-sdc-listener:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:18.763050445Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP CDS SDC listener microservice
+    digest: fbdb2dd9fc54fc7dec6e1a9bd08f08e140f675d8107a6cd516a281d2b13f1ffa
+    name: cds-sdc-listener
+    urls:
+    - charts/cds-sdc-listener-13.0.0.tgz
+    version: 13.0.0
+  cds-ui:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:22.190437822Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP CDS UI
+    digest: 8ae1e4cb2fc0d0c09f82a682fc65ea73b279d7ebe187ff38f4c515e2d72e629e
+    name: cds-ui
+    urls:
+    - charts/cds-ui-13.0.0.tgz
+    version: 13.0.0
+  certManagerCertificate:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:20.699625651Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: cmpv2Config
+      repository: file://../cmpv2Config
+      version: ~13.x-0
+    description: A Helm chart for Cert-Manager Certificate CRD template
+    digest: 444bc3901e6f0fd3caee47a329bfebefaad70c9a63c279161576b5da1f93f4d2
+    name: certManagerCertificate
+    urls:
+    - charts/certManagerCertificate-13.0.0.tgz
+    version: 13.0.0
+  chartmuseum:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:49.02940586Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Chart Museum
+    digest: d7595e787ea34f5cf78da9dbcdd6ce4d3bf84bef14f417f9209fb51ecad28890
+    name: chartmuseum
+    urls:
+    - charts/chartmuseum-13.0.0.tgz
+    version: 13.0.0
+  cli:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:32.472568279Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Command Line Interface
+    digest: 3eacec47094fd5e3a64a943dfd940973410b99e213b276c3dd6b72ad03c69865
+    name: cli
+    urls:
+    - charts/cli-13.0.0.tgz
+    version: 13.0.0
+  cmpv2-cert-provider:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:52.456218464Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP CMPv2 certificate external provider for cert-manager
+    digest: d34a49cb4ffe2c10ebdd333d3273f79f1cc0b601461273d04fd90ee8e3458036
+    name: cmpv2-cert-provider
+    urls:
+    - charts/cmpv2-cert-provider-13.0.0.tgz
+    version: 13.0.0
+  cmpv2Config:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:13.960684606Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    description: Template used to store cmpv2 configuration in onap
+    digest: 055e00b50451db1c739e94dee06a23a004cd06810a3f503be4a0ca451dc2b038
+    name: cmpv2Config
+    urls:
+    - charts/cmpv2Config-13.0.0.tgz
+    version: 13.0.0
+  common:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:00.704374972Z"
+    description: Common templates for inclusion in other charts
+    digest: 1a27443c1be6e0185329b73872b08dcdad4c2c7dcf322fdb61f54f666373f837
+    name: common
+    urls:
+    - charts/common-13.0.2.tgz
+    version: 13.0.2
+  controlpanel:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2024-03-06T06:59:26.546820433Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for nonrtric controlpanel
+    digest: 324d239d5bc5fea7e98f436d9addcd0221b8ff1593303cbd2dcc62ca238dfd58
+    name: controlpanel
+    urls:
+    - charts/controlpanel-2.0.0.tgz
+    version: 2.0.0
+  core-nssmf-simulator:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:40.570594805Z"
+    description: A Helm chart for core nssmf simulator
+    digest: 388512f8b661ccf1a26ee1bb2165ef3f2af7276be78daebb7e90c13077939b87
+    name: core-nssmf-simulator
+    urls:
+    - charts/core-nssmf-simulator-1.0.0.tgz
+    version: 1.0.0
+  cps:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:56.312202771Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: standaloneDeployment
+      name: roles-wrapper
+      repository: '@local'
+      version: ~13.x-0
+    - condition: cps-core.enabled
+      name: cps-core
+      repository: '@local'
+      version: ~13.x-0
+    - condition: cps-temporal.enabled
+      name: cps-temporal
+      repository: '@local'
+      version: ~13.x-0
+    - condition: ncmp-dmi-plugin.enabled
+      name: ncmp-dmi-plugin
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Configuration Persistance Service (CPS)
+    digest: 4f1e7912c5823004e6c9ea8887f26a88231420aa53609cfb9a2e77df19556854
+    name: cps
+    urls:
+    - charts/cps-13.0.1.tgz
+    version: 13.0.1
+  cps-core:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:39.254270915Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.postgres.localCluster
+      name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - condition: postgres.postgresInit
+      name: postgres-init
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Configuration Persistance Service (CPS) - Core
+    digest: 263d2c51364fed41d87eee1e0a3d76786aba56094113c9a6fdc38254e1f5682e
+    name: cps-core
+    urls:
+    - charts/cps-core-13.0.1.tgz
+    version: 13.0.1
+  cps-temporal:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:42.865226187Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: timescaledb
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Configuration Persistance Service (CPS) - Temporal
+    digest: 105afefea46a10ec802fa67fce99bb5034019992f451271f72ce3d0e1f604be6
+    name: cps-temporal
+    urls:
+    - charts/cps-temporal-13.0.1.tgz
+    version: 13.0.1
+  dcae-datafile-collector:
+  - apiVersion: v2
+    appVersion: London
+    created: "2024-03-06T06:50:09.49064439Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: certManagerCertificate
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE DataFile Collector Helm charts
+    digest: 20d5ccf229a21941c5bafd473ec52b45262dee58085639009e3087432f55c7cf
+    name: dcae-datafile-collector
+    urls:
+    - charts/dcae-datafile-collector-13.0.0.tgz
+    version: 13.0.0
+  dcae-datalake-admin-ui:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:13.047320555Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE datalake-admin-ui helm chart
+    digest: 1614f46e4008cb8fb8c1fcd2a3093698faff99519e6a4cff2c016e2a5238c0b0
+    name: dcae-datalake-admin-ui
+    urls:
+    - charts/dcae-datalake-admin-ui-13.0.0.tgz
+    version: 13.0.0
+  dcae-datalake-des:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:16.60547973Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE Datalake DES MS charts
+    digest: 857833b928809cf9fe5b0868f6147d39d51005c5effda8b385efa1de11859275
+    name: dcae-datalake-des
+    urls:
+    - charts/dcae-datalake-des-13.0.0.tgz
+    version: 13.0.0
+  dcae-datalake-feeder:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:20.23535417Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE Datalake feeder MS charts
+    digest: cf55fc5b4be09d804f59bd79be63c1aeac7b2f12bc39b4c9fd6fe71fdbe67eb8
+    name: dcae-datalake-feeder
+    urls:
+    - charts/dcae-datalake-feeder-13.0.0.tgz
+    version: 13.0.0
+  dcae-heartbeat:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:23.875650537Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE Heartbeat Microservice
+    digest: e5c6d4478722b33a8da69ff81ca7f3147f8a3548dd915effa826ee19b669db7c
+    name: dcae-heartbeat
+    urls:
+    - charts/dcae-heartbeat-13.0.0.tgz
+    version: 13.0.0
+  dcae-hv-ves-collector:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:27.453800411Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: certManagerCertificate
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE HV VES collector
+    digest: 2a870d232479889361b4aef26f1692dd6f141c0b4ef14654cef094ea6f6d8886
+    name: dcae-hv-ves-collector
+    urls:
+    - charts/dcae-hv-ves-collector-13.0.0.tgz
+    version: 13.0.0
+  dcae-kpi-ms:
+  - apiVersion: v2
+    appVersion: London
+    created: "2024-03-06T06:50:31.008791197Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE KPI MS chart
+    digest: e56bb9f12c9ac7de87044dc751454a096bc3ea0a1622c0ce822f4a605e8850af
+    name: dcae-kpi-ms
+    urls:
+    - charts/dcae-kpi-ms-13.0.0.tgz
+    version: 13.0.0
+  dcae-ms-healthcheck:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:34.429812971Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP DCAE Microservice Health Check
+    digest: 1101c9a9c963aba2a52bdf068a2d7a2c95b31eefc0053f6523257a9cf36206dd
+    name: dcae-ms-healthcheck
+    urls:
+    - charts/dcae-ms-healthcheck-13.0.0.tgz
+    version: 13.0.0
+  dcae-pm-mapper:
+  - apiVersion: v2
+    appVersion: London
+    created: "2024-03-06T06:50:37.9445314Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: file://../../common/dcaegen2-services-common
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE PM-Mapper Helm charts
+    digest: 6a9cc7c793c4fcb0f1a535a5fc3bd2517ae51e040a3d599dc52971d84fd5834a
+    name: dcae-pm-mapper
+    urls:
+    - charts/dcae-pm-mapper-13.0.0.tgz
+    version: 13.0.0
+  dcae-pmsh:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:41.566661451Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE PMSH Service
+    digest: 460186fabb6abf7c10a5aebfed2052e3d5afa103d4be9d6250a051ee0d23abc3
+    name: dcae-pmsh
+    urls:
+    - charts/dcae-pmsh-13.0.0.tgz
+    version: 13.0.0
+  dcae-prh:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:45.159091398Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE PRH
+    digest: b25be2ff785238814e128e187358910943816c131bfea40763a84b32887301dd
+    name: dcae-prh
+    urls:
+    - charts/dcae-prh-13.0.0.tgz
+    version: 13.0.0
+  dcae-restconf-collector:
+  - apiVersion: v2
+    appVersion: London
+    created: "2024-03-06T06:50:48.719474681Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE RESTConf Collector
+    digest: a58ff3ecdfa5f33ede85a3be6dde5a790f8fa9b9c51837f848b0ac8cefac0606
+    name: dcae-restconf-collector
+    urls:
+    - charts/dcae-restconf-collector-13.0.0.tgz
+    version: 13.0.0
+  dcae-slice-analysis-ms:
+  - apiVersion: v2
+    appVersion: London
+    created: "2024-03-06T06:50:52.337489842Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE SliceAnalysis MS charts
+    digest: 93dbe5da141b8ad428faed6e065175957308ef54f7afe6c420820d128b8d3dc6
+    name: dcae-slice-analysis-ms
+    urls:
+    - charts/dcae-slice-analysis-ms-13.0.0.tgz
+    version: 13.0.0
+  dcae-snmptrap-collector:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:55.880602181Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE SNMPTrap Collector
+    digest: da5170082a8bfd528f88d560715dbb9bf12029a26ecd64ad81ebdd623a4279e7
+    name: dcae-snmptrap-collector
+    urls:
+    - charts/dcae-snmptrap-collector-13.0.0.tgz
+    version: 13.0.0
+  dcae-son-handler:
+  - apiVersion: v2
+    appVersion: London
+    created: "2024-03-06T06:50:59.497233566Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE Son-handler helm chart
+    digest: dc1e602fe2666eb5ac2dd9c9088c76a8ab48452e3a0fc931cc6d629f8f8b8540
+    name: dcae-son-handler
+    urls:
+    - charts/dcae-son-handler-13.0.0.tgz
+    version: 13.0.0
+  dcae-tcagen2:
+  - apiVersion: v2
+    appVersion: London
+    created: "2024-03-06T06:51:03.138460044Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: mongo
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE TCA (Gen 2)
+    digest: e2beb463a899b2db55080c0f1642672780ce7a0cceb843b5493084b5ca5a6976
+    name: dcae-tcagen2
+    urls:
+    - charts/dcae-tcagen2-13.0.0.tgz
+    version: 13.0.0
+  dcae-ves-collector:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:51:06.780945272Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: certManagerCertificate
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE VES Collector
+    digest: 6f3d8b618984c790c7dbfc0e986d291ecff0e5686b772d33e2e939af223df2c6
+    name: dcae-ves-collector
+    urls:
+    - charts/dcae-ves-collector-13.0.0.tgz
+    version: 13.0.0
+  dcae-ves-mapper:
+  - apiVersion: v2
+    appVersion: London
+    created: "2024-03-06T06:51:10.329462489Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE VES-Mapper Microservice
+    digest: 5b4870676fa14c66e4be6949b289297002891ef54e5ff6f87fbc8612dedae4dd
+    name: dcae-ves-mapper
+    urls:
+    - charts/dcae-ves-mapper-13.0.0.tgz
+    version: 13.0.0
+  dcae-ves-openapi-manager:
+  - apiVersion: v2
+    created: "2024-03-06T06:51:13.873761183Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: dcaegen2-services-common
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP DCAE VES OpenApi Manager
+    digest: 2f2b97c841d8e279ea1ea9bfe68b1eedc8c8169a2e740d828136078a1b88f663
+    name: dcae-ves-openapi-manager
+    urls:
+    - charts/dcae-ves-openapi-manager-13.0.0.tgz
+    version: 13.0.0
+  dcaegen2-services:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:51:28.888066688Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-datafile-collector.enabled
+      name: dcae-datafile-collector
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-datalake-admin-ui.enabled
+      name: dcae-datalake-admin-ui
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-datalake-des.enabled
+      name: dcae-datalake-des
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-datalake-feeder.enabled
+      name: dcae-datalake-feeder
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-heartbeat.enabled
+      name: dcae-heartbeat
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-hv-ves-collector.enabled
+      name: dcae-hv-ves-collector
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-kpi-ms.enabled
+      name: dcae-kpi-ms
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-ms-healthcheck.enabled
+      name: dcae-ms-healthcheck
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-pm-mapper.enabled
+      name: dcae-pm-mapper
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-pmsh.enabled
+      name: dcae-pmsh
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-prh.enabled
+      name: dcae-prh
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-restconf-collector.enabled
+      name: dcae-restconf-collector
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-slice-analysis-ms.enabled
+      name: dcae-slice-analysis-ms
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-snmptrap-collector.enabled
+      name: dcae-snmptrap-collector
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-son-handler.enabled
+      name: dcae-son-handler
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-tcagen2.enabled
+      name: dcae-tcagen2
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-ves-collector.enabled
+      name: dcae-ves-collector
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-ves-mapper.enabled
+      name: dcae-ves-mapper
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcae-ves-openapi-manager.enabled
+      name: dcae-ves-openapi-manager
+      repository: file://components/dcae-ves-openapi-manager
+      version: ~13.x-0
+    description: DCAE Microservices
+    digest: c53bb1c2d407c995e93decd10c0e3a9e346c3209548be794ee7b8c82386af978
+    name: dcaegen2-services
+    urls:
+    - charts/dcaegen2-services-13.0.0.tgz
+    version: 13.0.0
+  dcaegen2-services-common:
+  - apiVersion: v2
+    appVersion: Kohn
+    created: "2024-03-06T06:50:02.809868611Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    description: DCAE Microservices Common templates
+    digest: f99bedc2adab57bd8012146cee9fb017f03939431c08522fa7011f890f2dd805
+    name: dcaegen2-services-common
+    urls:
+    - charts/dcaegen2-services-common-13.0.0.tgz
+    version: 13.0.0
+  dgbuilder:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:24.076736332Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: file://../serviceAccount
+      version: ~13.x-0
+    description: D.G. Builder application
+    digest: 947b6cb58ab5e45fd8c576649700d8f1e443baf33281f614936b12948337361f
+    name: dgbuilder
+    urls:
+    - charts/dgbuilder-13.0.0.tgz
+    version: 13.0.0
+  dmaap:
+  - apiVersion: v2
+    created: "2024-03-06T06:51:46.498715282Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: message-router.enabled
+      name: message-router
+      repository: file://components/message-router
+      version: ~13.x-0
+    - condition: dmaap-dr-node.enabled
+      name: dmaap-dr-node
+      repository: file://components/dmaap-dr-node
+      version: ~13.x-0
+    - condition: dmaap-dr-prov.enabled
+      name: dmaap-dr-prov
+      repository: file://components/dmaap-dr-prov
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP DMaaP components
+    digest: f23393292b071a1b3c6c4a0f0702b73e4d7f4977bb24766172517f9b1413bb33
+    name: dmaap
+    urls:
+    - charts/dmaap-13.0.0.tgz
+    version: 13.0.0
+  dmaap-dr-node:
+  - apiVersion: v2
+    created: "2024-03-06T06:51:32.570184679Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP DMaaP Data Router Node Server
+    digest: 553c22992117ebc2b946e387c6bd3ed5e92fc29907e277e5118174580d189d97
+    name: dmaap-dr-node
+    urls:
+    - charts/dmaap-dr-node-13.0.0.tgz
+    version: 13.0.0
+  dmaap-dr-prov:
+  - apiVersion: v2
+    created: "2024-03-06T06:51:36.268220207Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadbGalera.localCluster
+      name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - name: mariadb-init
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP DMaaP Data Router Provisioning Server
+    digest: 77f4aafa96d17b229464cdadf32df67c2fc5c007b111d5de9cd556b3f7ca537a
+    name: dmaap-dr-prov
+    urls:
+    - charts/dmaap-dr-prov-13.0.0.tgz
+    version: 13.0.0
+  dmaap-listener:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:34.296796833Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: SDNC DMaaP Listener
+    digest: c953c98f7f90b69bec9054d0886ede082fec6d62921a86224de3023b902e4f8c
+    name: dmaap-listener
+    urls:
+    - charts/dmaap-listener-13.0.0.tgz
+    version: 13.0.0
+  dmaapadapterservice:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:26.959644973Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for Dmaap Adapter Service
+    digest: 33d4c876d9f865b3017b6ec6ef0623947e33d77861456e2acc31b834877fe74e
+    name: dmaapadapterservice
+    urls:
+    - charts/dmaapadapterservice-1.0.0.tgz
+    version: 1.0.0
+  dmaapmediatorservice:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:27.392579238Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for Dmaap Mediator Service
+    digest: fcba7b0c1752075854478ee220d18638e801f7fc596299156294658d180bd002
+    name: dmaapmediatorservice
+    urls:
+    - charts/dmaapmediatorservice-1.0.0.tgz
+    version: 1.0.0
+  du-simulator:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:40.860068856Z"
+    description: A Helm chart for o-du simulator
+    digest: 35962c6b98037663a22a627ba7536e8b1950ee1461e14ef824d5c69a098c30ef
+    name: du-simulator
+    urls:
+    - charts/du-simulator-1.0.0.tgz
+    version: 1.0.0
+  elasticsearch:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:43.0560881Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: master
+      repository: file://components/master
+      version: ~13.x-0
+    - condition: elasticsearch.data.enabled,data.enabled
+      name: data
+      repository: file://components/data
+      version: ~13.x-0
+    - condition: elasticsearch.curator.enabled,curator.enabled
+      name: curator
+      repository: file://components/curator
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    description: ONAP elasticsearch
+    digest: 217aaee1d0846ab3664dfa680ade3b70ef32999983bb190d1e8ab2e1925d6658
+    name: elasticsearch
+    urls:
+    - charts/elasticsearch-13.0.0.tgz
+    version: 13.0.0
+  etcd:
+  - apiVersion: v2
+    appVersion: 2.2.5
+    created: "2024-03-06T06:47:46.407282446Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    description: Distributed reliable key-value store for the most critical data of a distributed system.
+    digest: 213cdac818f5d5e5f386657ac98bbb5818e6543a805c68e5ad544b8d90e53b13
+    home: https://github.com/coreos/etcd
+    name: etcd
+    sources:
+    - https://github.com/coreos/etcd
+    urls:
+    - charts/etcd-13.0.0.tgz
+    version: 13.0.0
+  etcd-init:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:49.795605807Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Chart for etcd init job
+    digest: 337d2e0b8f75c6b04c4b46560d2fed35b3fdf6a95eaf96a69b8f2dba6d1ae017
+    name: etcd-init
+    urls:
+    - charts/etcd-init-13.0.0.tgz
+    version: 13.0.0
+  helmmanager:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:27.793315283Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for Helm Manager
+    digest: 210579485785c8da49e1fddec738935bdbe31c2a69c51f74fb773e1013bc4ce2
+    name: helmmanager
+    urls:
+    - charts/helmmanager-1.0.0.tgz
+    version: 1.0.0
+  holmes:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:00.306194014Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.postgres.localCluster
+      name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.postgres.globalCluster
+      name: postgres-init
+      repository: '@local'
+      version: ~13.x-0
+    - name: holmes-rule-mgmt
+      repository: file://components/holmes-rule-mgmt
+      version: ~13.x-0
+    - name: holmes-engine-mgmt
+      repository: file://components/holmes-engine-mgmt
+      version: ~13.x-0
+    description: ONAP DCAE HOLMES
+    digest: 6801afec3e64ce3e4841ee5f27fe68489b05b7715fbf718e28b090d876b4d478
+    name: holmes
+    urls:
+    - charts/holmes-13.0.0.tgz
+    version: 13.0.0
+  holmes-engine-mgmt:
+  - apiVersion: v2
+    appVersion: "2.0"
+    created: "2024-03-06T06:51:50.063063742Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Holmes Engine Management
+    digest: 82456772f02ec998836460530d39efa16451417143f1f296e66d342c5a6be67d
+    name: holmes-engine-mgmt
+    urls:
+    - charts/holmes-engine-mgmt-13.0.0.tgz
+    version: 13.0.0
+  holmes-rule-mgmt:
+  - apiVersion: v2
+    appVersion: "2.0"
+    created: "2024-03-06T06:51:53.558630985Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Holmes Rule Management
+    digest: d6ccf978cb6249d664477cbd2235c484ab8180827c7e2d91d564d7d37b172555
+    name: holmes-rule-mgmt
+    urls:
+    - charts/holmes-rule-mgmt-13.0.0.tgz
+    version: 13.0.0
+  informationservice:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:28.195450028Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for Information Coordinator Service
+    digest: bd4f54f73ba4319706e05c49aa45bb37b319c91cfc855fef4c440c4ada01fa0f
+    name: informationservice
+    urls:
+    - charts/informationservice-1.0.0.tgz
+    version: 1.0.0
+  keycloak-init:
+  - apiVersion: v2
+    created: "2024-03-06T06:54:17.791032856Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: onap-keycloak-config-cli
+      repository: file://components/keycloak-config-cli
+      version: 5.6.1
+    description: ONAP Realm creation and configuration
+    digest: 5a90189ff752c11c146e2da00e1e8a45f8697be98a470820aa2019614a390924
+    name: keycloak-init
+    sources:
+    - https://github.com/adorsys/keycloak-config-cli
+    urls:
+    - charts/keycloak-init-13.0.0.tgz
+    version: 13.0.0
+  kube2msb:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:14.016387229Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP MicroServices Bus Kube2MSB Registrator
+    digest: 18379ead4374034a373573b705d86af0540e84e3b334f5db2ef6b9ecd7dbcfc6
+    name: kube2msb
+    urls:
+    - charts/kube2msb-13.0.0.tgz
+    version: 13.0.0
+  logConfiguration:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:53.119686936Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    description: Template used to create same STDOUT log configuration
+    digest: a4d5c20715c855a4d7a68c1d0b68898fac71664de80e95068d2a19328a92c186
+    name: logConfiguration
+    urls:
+    - charts/logConfiguration-13.0.0.tgz
+    version: 13.0.0
+  mariadb-galera:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:56.566358281Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: file://../readinessCheck
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    - condition: global.mariadbGalera.enableServiceAccount
+      name: serviceAccount
+      repository: file://../serviceAccount
+      version: ~13.x-0
+    description: Chart for MariaDB Galera cluster
+    digest: c5f55220cc15cb3fecf3f6da04c9a46a6f9ab55b8fb753a181048231be890a31
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    - galera
+    - cluster
+    name: mariadb-galera
+    urls:
+    - charts/mariadb-galera-13.0.1.tgz
+    version: 13.0.1
+  mariadb-init:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:59.971285863Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Chart for MariaDB Galera init job
+    digest: 919ad3030dde7f46f84d2ffa53dc86ae4c9aaf2665f3f8d2520f92ef5f8598e0
+    name: mariadb-init
+    urls:
+    - charts/mariadb-init-13.0.0.tgz
+    version: 13.0.0
+  message-router:
+  - apiVersion: v2
+    created: "2024-03-06T06:51:39.690324018Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Message Router
+    digest: 591da4c1cb005faff26e06a33835ce8db7ebcb61ffcdc2fc5461cf69ed858e35
+    name: message-router
+    urls:
+    - charts/message-router-13.0.0.tgz
+    version: 13.0.0
+  modeling:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:10.594271812Z"
+    dependencies:
+    - name: modeling-etsicatalog
+      repository: file://components/modeling-etsicatalog
+      version: ~13.x-0
+    description: ONAP Modeling (Modeling)
+    digest: bf0ec5c902945678658db1d3b095de2a275c984d70429986b50f3ab51ec1fe70
+    name: modeling
+    urls:
+    - charts/modeling-13.0.0.tgz
+    version: 13.0.0
+  modeling-etsicatalog:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:04.051752902Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadbGalera.localCluster
+      name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadbGalera.globalCluster
+      name: mariadb-init
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Modeling - Etsicatalog
+    digest: 6f2168cdb7f5402aa133d25df96a8cd969f17c8d2ac3e8232ebd7f1a2880d2f4
+    name: modeling-etsicatalog
+    urls:
+    - charts/modeling-etsicatalog-13.0.0.tgz
+    version: 13.0.0
+  mongo:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:03.321883831Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    description: MongoDB Server
+    digest: 3c7750d2980c5cf51c47d9323fbdf92919e114c250545f8f2391419938babe9d
+    name: mongo
+    urls:
+    - charts/mongo-13.0.0.tgz
+    version: 13.0.0
+  msb:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:34.391900772Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: kube2msb
+      repository: file://components/kube2msb
+      version: ~13.x-0
+    - name: msb-consul
+      repository: file://components/msb-consul
+      version: ~13.x-0
+    - name: msb-discovery
+      repository: file://components/msb-discovery
+      version: ~13.x-0
+    - name: msb-eag
+      repository: file://components/msb-eag
+      version: ~13.x-0
+    - name: msb-iag
+      repository: file://components/msb-iag
+      version: ~13.x-0
+    description: ONAP MicroServices Bus
+    digest: 8627a9599fcf876105bdf822fe4583cea4cba8bc39cdd140fa575d70132268dd
+    name: msb
+    urls:
+    - charts/msb-13.0.0.tgz
+    version: 13.0.0
+  msb-consul:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:17.439393323Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP MicroServices Bus Consul
+    digest: 82151a66ecf585b275081bfe9462adfae4d3de387728a57aaac97ffddfd48dba
+    name: msb-consul
+    urls:
+    - charts/msb-consul-13.0.0.tgz
+    version: 13.0.0
+  msb-discovery:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:20.851377591Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP MicroServices Bus Discovery
+    digest: 6a1ba54473e4b8e643dd056b7eb3bb307ec6fa9c77be2df4d0f8ad682a2a3334
+    name: msb-discovery
+    urls:
+    - charts/msb-discovery-13.0.0.tgz
+    version: 13.0.0
+  msb-eag:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:24.281742088Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP MicroServices Bus Internal API Gateway
+    digest: 09c1b4b8f4ed17c8331953c244bae946a5e151a4630083e1f78a7a68d3fedd03
+    name: msb-eag
+    urls:
+    - charts/msb-eag-13.0.0.tgz
+    version: 13.0.0
+  msb-iag:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:27.726246212Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP MicroServices Bus Internal API Gateway
+    digest: cc69c6b0c39866874d542acddf613846ba76ef429c26ac685a89dcddc4e59cff
+    name: msb-iag
+    urls:
+    - charts/msb-iag-13.0.0.tgz
+    version: 13.0.0
+  multicloud:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:05.607344651Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - condition: multicloud-fcaps.enabled
+      name: multicloud-fcaps
+      repository: file://components/multicloud-fcaps
+      version: ~13.x-0
+    - condition: multicloud-k8s.enabled
+      name: multicloud-k8s
+      repository: file://components/multicloud-k8s
+      version: ~13.x-0
+    - condition: multicloud-pike.enabled
+      name: multicloud-pike
+      repository: file://components/multicloud-pike
+      version: ~13.x-0
+    - condition: multicloud-prometheus.enabled
+      name: multicloud-prometheus
+      repository: file://components/multicloud-prometheus
+      version: ~13.x-0
+    - condition: multicloud-starlingx.enabled
+      name: multicloud-starlingx
+      repository: file://components/multicloud-starlingx
+      version: ~13.x-0
+    - condition: multicloud-vio.enabled
+      name: multicloud-vio
+      repository: file://components/multicloud-vio
+      version: ~13.x-0
+    - condition: multicloud-windriver.enabled
+      name: multicloud-windriver
+      repository: file://components/multicloud-windriver
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP multicloud broker
+    digest: 7b4c400c1678b78efc1043360bc1f838c2dad7aa44db924a473b0cda201fcad8
+    name: multicloud
+    urls:
+    - charts/multicloud-13.0.0.tgz
+    version: 13.0.0
+  multicloud-fcaps:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:37.884859557Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP multicloud OpenStack fcaps Plugin
+    digest: 721ae9645c37daf32bf90e5b12c35d9f6994209726cb0aadbc314c266af3b28f
+    name: multicloud-fcaps
+    urls:
+    - charts/multicloud-fcaps-13.0.0.tgz
+    version: 13.0.0
+  multicloud-k8s:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:41.441354096Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: mongo
+      repository: '@local'
+      version: ~13.x-0
+    - name: etcd
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Multicloud Kubernetes Plugin
+    digest: a1f3b66f894936911162d74e2cbab4903541fc4db5189c1ec4cddadbb9dfedce
+    name: multicloud-k8s
+    urls:
+    - charts/multicloud-k8s-13.0.0.tgz
+    version: 13.0.0
+  multicloud-pike:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:44.87338888Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP multicloud OpenStack Pike Plugin
+    digest: e2391c7d3ca8c12a64ede8ee5f2f94c5450de8ee1ec7bb39cce075531085e9a1
+    name: multicloud-pike
+    urls:
+    - charts/multicloud-pike-13.0.0.tgz
+    version: 13.0.0
+  multicloud-prometheus:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:48.303530779Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: prometheus-alertmanager
+      repository: file://components/prometheus-alertmanager
+      version: ~13.x-0
+    - name: prometheus-grafana
+      repository: file://components/prometheus-grafana
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Multicloud Prometheus
+    digest: dacdeeb54132c8ec401224baf076f2b7fb51ecc97e2dd00b323a8c4f10c3c177
+    name: multicloud-prometheus
+    urls:
+    - charts/multicloud-prometheus-13.0.0.tgz
+    version: 13.0.0
+  multicloud-starlingx:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:51.726453396Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP multicloud OpenStack Starlingx Plugin
+    digest: 5fa9432f1b5c207c26b86a4af056b4d4473c557d1db2449ac4a1cdfb87a85111
+    name: multicloud-starlingx
+    urls:
+    - charts/multicloud-starlingx-13.0.0.tgz
+    version: 13.0.0
+  multicloud-vio:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:55.190628015Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP multicloud VIO plugin
+    digest: 4d357c2e7d6865f760c276f3996b1489f797ea27c36e02c52044c82763d57714
+    name: multicloud-vio
+    urls:
+    - charts/multicloud-vio-13.0.0.tgz
+    version: 13.0.0
+  multicloud-windriver:
+  - apiVersion: v2
+    created: "2024-03-06T06:52:58.609376331Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP multicloud OpenStack WindRiver Plugin
+    digest: 3c618d4800fcb8ca9fdd3000bb59a47b7f62eb39e932bb80bb23620b2aa38686
+    name: multicloud-windriver
+    urls:
+    - charts/multicloud-windriver-13.0.0.tgz
+    version: 13.0.0
+  nbi:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:09.361746974Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: mongo
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadbGalera.localCluster
+      name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadbGalera.globalCluster
+      name: mariadb-init
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Northbound Interface
+    digest: a257103040cf466191b9ca5439b109b6b3af65576bca1db0c9a2ddf7f4304d6b
+    name: nbi
+    urls:
+    - charts/nbi-13.0.0.tgz
+    version: 13.0.0
+  ncmp-dmi-plugin:
+  - apiVersion: v2
+    created: "2024-03-06T06:49:46.423736023Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Configuration Persistance Service (CPS) - NCMP-DMI-Plugin
+    digest: ea82c05784ab1f6938af8063fa389126f4675745b144ad2c27c098dee34a438f
+    name: ncmp-dmi-plugin
+    urls:
+    - charts/ncmp-dmi-plugin-13.0.1.tgz
+    version: 13.0.1
+  network-name-gen:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:06.897999432Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    - condition: global.mariadbGalera.localCluster
+      name: mariadb-galera
+      repository: file://../mariadb-galera
+      version: ~13.x-0
+    - condition: global.mariadbGalera.globalCluster
+      name: mariadb-init
+      repository: file://../mariadb-init
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Name Generation Micro Service
+    digest: 645d28b3563cbf2dc5fad31bbbd4fb5672bd069bc846d66d17d22b4256867303
+    name: network-name-gen
+    urls:
+    - charts/network-name-gen-13.0.0.tgz
+    version: 13.0.0
+  nonrtric:
+  - apiVersion: v2
+    appVersion: test
+    created: "2024-03-06T06:59:39.512103657Z"
+    dependencies:
+    - condition: nonrtric.installA1controller
+      name: a1controller
+      repository: '@local'
+      version: ~2.0.0
+    - condition: nonrtric.installA1simulator
+      name: a1simulator
+      repository: '@local'
+      version: ~2.1.0
+    - condition: nonrtric.installControlpanel
+      name: controlpanel
+      repository: '@local'
+      version: ~2.0.0
+    - condition: nonrtric.installPms
+      name: policymanagementservice
+      repository: '@local'
+      version: ~2.0.0
+    - condition: nonrtric.installInformationservice
+      name: informationservice
+      repository: '@local'
+      version: ~1.0.0
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    - condition: nonrtric.installRappcatalogueservice
+      name: rappcatalogueservice
+      repository: '@local'
+      version: ~1.0.0
+    - condition: nonrtric.installNonrtricgateway
+      name: nonrtricgateway
+      repository: '@local'
+      version: ~1.0.0
+    - condition: nonrtric.installORUApp
+      name: oru-app
+      repository: '@local'
+      version: ~1.0.0
+    - condition: nonrtric.installODUSMOApp
+      name: odu-app
+      repository: '@local'
+      version: ~1.0.0
+    - condition: nonrtric.installODUICSApp
+      name: odu-app-ics-version
+      repository: '@local'
+      version: ~1.0.0
+    - condition: nonrtric.installTopology
+      name: topology
+      repository: '@local'
+      version: ~1.0.0
+    - condition: nonrtric.installDmaapmediatorservice
+      name: dmaapmediatorservice
+      repository: '@local'
+      version: ~1.0.0
+    - condition: nonrtric.installHelmmanager
+      name: helmmanager
+      repository: '@local'
+      version: ~1.0.0
+    - condition: nonrtric.installKong
+      name: kong
+      repository: https://nexus3.o-ran-sc.org/repository/helm-konghq/
+      version: ~2.4.0
+    - condition: nonrtric.installDmaapadapterservice
+      name: dmaapadapterservice
+      repository: '@local'
+      version: ~1.0.0
+    description: Open Radio Access Network (ORAN)
+    digest: 452f9ad4265cb1cee79bb5aea3c6ef7b52f4b30c3586f45b54f6af250b52fde4
+    home: https://www.o-ran.org/
+    kubeVersion: '>=1.19.0-0'
+    name: nonrtric
+    sources:
+    - https://gerrit.o-ran-sc.org/r/#/admin/projects/
+    urls:
+    - charts/nonrtric-1.0.0.tgz
+    version: 1.0.0
+  nonrtric-common:
+  - apiVersion: v2
+    created: "2024-03-06T06:59:24.568472983Z"
+    description: NONRTRIC Common templates for inclusion in other charts
+    digest: e1320818e3627007dab194b4787e9e9cbe2ffead605b701a74c7e5da09ac623d
+    name: nonrtric-common
+    urls:
+    - charts/nonrtric-common-2.0.0.tgz
+    version: 2.0.0
+  nonrtricgateway:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-03-06T06:59:28.598703515Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for Nonrtric Gateway
+    digest: 8262d9509cbad0c0ea0f74193adcb8a6c7cd34bc2a492339a278ee60716f4023
+    name: nonrtricgateway
+    urls:
+    - charts/nonrtricgateway-1.0.0.tgz
+    version: 1.0.0
+  ns-simulators:
+  - apiVersion: v1
+    appVersion: test
+    created: "2024-03-06T06:59:45.251957992Z"
+    dependencies:
+    - condition: ns-simulators.actn-simulator
+      name: actn-simulator
+      repository: '@local'
+      version: ~1.0.0
+    - condition: ns-simulators.core-nssmf-simulator
+      name: core-nssmf-simulator
+      repository: '@local'
+      version: ~1.0.0
+    - condition: ns-simulators.ran-nssmf-simulator
+      name: ran-nssmf-simulator
+      repository: '@local'
+      version: ~1.0.0
+    description: Network Slicing simulators
+    digest: 88e08e615411618e700fc8bf30f91bc67f6d0275733603774170a3259eb106b2
+    home: https://www.onap.org
+    icon: https://wiki.onap.org/download/thumbnails/1015829/onap_704x271%20copy.png?version=1&modificationDate=1488326334000&api=v2
+    kubeVersion: '>=1.11.5-0'
+    name: ns-simulators
+    sources:
+    - https://gerrit.onap.org/r/#/admin/projects/
+    urls:
+    - charts/ns-simulators-1.0.0.tgz
+    version: 1.0.0
+  oauth2-proxy:
+  - apiVersion: v2
+    created: "2024-03-06T06:54:39.263229244Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: onap-oauth2-proxy
+      repository: file://components/oauth2-proxy
+      version: 6.10.1
+    description: ONAP Oauth2-proxy
+    digest: dd2ec2a0165dc3f0d05e4646e621c51d2a6043228049ce7125e74c697145a336
+    name: oauth2-proxy
+    sources:
+    - https://github.com/oauth2-proxy/manifests
+    urls:
+    - charts/oauth2-proxy-13.0.0.tgz
+    version: 13.0.0
+  odu-app:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:28.996513053Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart to deploy odu-app smo version
+    digest: 0b90cf388a5295a9e094618d64714d19a7404ce5c1ca1ece434b6f0fcbdeb423
+    name: odu-app
+    urls:
+    - charts/odu-app-1.0.0.tgz
+    version: 1.0.0
+  odu-app-ics-version:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:29.394975543Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart to deploy odu-app-ics-version version
+    digest: b2f7554987050a68bf695355cfd90cf4a1d582f3c7a70abf77601876a5655d29
+    name: odu-app-ics-version
+    urls:
+    - charts/odu-app-ics-version-1.0.0.tgz
+    version: 1.0.0
+  onap:
+  - apiVersion: v2
+    appVersion: Montreal
+    created: "2024-03-06T06:59:19.238876758Z"
+    dependencies:
+    - condition: aai.enabled
+      name: aai
+      repository: '@local'
+      version: ~13.x-0
+    - condition: cassandra.enabled
+      name: cassandra
+      repository: '@local'
+      version: ~13.x-0
+    - condition: cds.enabled
+      name: cds
+      repository: '@local'
+      version: ~13.x-0
+    - condition: cli.enabled
+      name: cli
+      repository: '@local'
+      version: ~13.x-0
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: cps.enabled
+      name: cps
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dcaegen2-services.enabled
+      name: dcaegen2-services
+      repository: '@local'
+      version: ~13.x-0
+    - condition: holmes.enabled
+      name: holmes
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dmaap.enabled
+      name: dmaap
+      repository: '@local'
+      version: ~13.x-0
+    - condition: mariadb-galera.enabled
+      name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - condition: msb.enabled
+      name: msb
+      repository: '@local'
+      version: ~13.x-0
+    - condition: multicloud.enabled
+      name: multicloud
+      repository: '@local'
+      version: ~13.x-0
+    - condition: nbi.enabled
+      name: nbi
+      repository: '@local'
+      version: ~13.x-0
+    - condition: policy.enabled
+      name: policy
+      repository: '@local'
+      version: ~13.x-0
+    - condition: portal-ng.enabled
+      name: portal-ng
+      repository: '@local'
+      version: ~13.x-0
+    - condition: postgres.enabled
+      name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - condition: oof.enabled
+      name: oof
+      repository: '@local'
+      version: ~13.x-0
+    - name: repository-wrapper
+      repository: '@local'
+      version: ~13.x-0
+    - condition: robot.enabled
+      name: robot
+      repository: '@local'
+      version: ~13.x-0
+    - condition: sdc.enabled
+      name: sdc
+      repository: '@local'
+      version: ~13.x-0
+    - condition: sdnc.enabled
+      name: sdnc
+      repository: '@local'
+      version: ~13.x-0
+    - condition: so.enabled
+      name: so
+      repository: '@local'
+      version: ~13.x-0
+    - condition: strimzi.enabled
+      name: strimzi
+      repository: '@local'
+      version: ~13.x-0
+    - condition: uui.enabled
+      name: uui
+      repository: '@local'
+      version: ~13.x-0
+    - condition: vfc.enabled
+      name: vfc
+      repository: '@local'
+      version: ~13.x-0
+    - condition: vnfsdk.enabled
+      name: vnfsdk
+      repository: '@local'
+      version: ~13.x-0
+    - condition: modeling.enabled
+      name: modeling
+      repository: '@local'
+      version: ~13.x-0
+    - condition: platform.enabled
+      name: platform
+      repository: '@local'
+      version: ~13.x-0
+    - condition: a1policymanagement.enabled
+      name: a1policymanagement
+      repository: '@local'
+      version: ~13.x-0
+    - condition: roles-wrapper.enabled
+      name: roles-wrapper
+      repository: '@local'
+      version: ~13.x-0
+    description: Open Network Automation Platform (ONAP)
+    digest: 2c9f90e2e79ac4ea5ed9d45c4ae1199249b4f93f2c1788704451b8fabee6d585
+    home: https://www.onap.org/
+    icon: https://wiki.onap.org/download/thumbnails/1015829/onap_704x271%20copy.png?version=1&modificationDate=1488326334000&api=v2
+    kubeVersion: '>=1.19.11-0'
+    name: onap
+    sources:
+    - https://gerrit.onap.org/r/#/admin/projects/
+    urls:
+    - charts/onap-13.0.0.tgz
+    version: 13.0.0
+  onap-keycloak-config-cli:
+  - apiVersion: v2
+    appVersion: 5.6.1
+    created: "2024-03-06T06:54:02.15836061Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: Import JSON-formatted configuration files into Keycloak - Configuration as Code for Keycloak.
+    digest: 3ccb4b5a63c07d3d315bc3cde4accd486480c78c96038580cda08092b3ff8f9d
+    home: https://github.com/adorsys/keycloak-config-cli
+    keywords:
+    - keycloak
+    - config
+    - import
+    - json
+    - continuous-integration
+    - keycloak-config-cli
+    maintainers:
+    - email: joe@adorsys.de
+      name: jkroepke
+      url: https://github.com/jkroepke
+    name: onap-keycloak-config-cli
+    sources:
+    - https://github.com/adorsys/keycloak-config-cli
+    urls:
+    - charts/onap-keycloak-config-cli-5.6.1.tgz
+    version: 5.6.1
+  onap-oauth2-proxy:
+  - apiVersion: v2
+    appVersion: 7.4.0
+    created: "2024-03-06T06:54:32.724584711Z"
+    dependencies:
+    - alias: redis
+      condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: ~16.13.2
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: A reverse proxy that provides authentication with Google, Github or other providers
+    digest: adf558ed9e056289596b2ede8f7160438f6a1f133718a2cd4d7fe229e4ab3575
+    home: https://oauth2-proxy.github.io/oauth2-proxy/
+    keywords:
+    - kubernetes
+    - oauth
+    - oauth2
+    - authentication
+    - google
+    - github
+    - redis
+    kubeVersion: '>=1.9.0-0'
+    maintainers:
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    - name: tlawrie
+    - email: nicholas.meves@gmail.com
+      name: NickMeves
+    - email: joel.speed@hotmail.co.uk
+      name: JoelSpeed
+    - email: pierluigi.lenoci@gmail.com
+      name: pierluigilenoci
+    name: onap-oauth2-proxy
+    sources:
+    - https://github.com/oauth2-proxy/oauth2-proxy
+    - https://github.com/oauth2-proxy/manifests
+    urls:
+    - charts/onap-oauth2-proxy-6.10.1.tgz
+    version: 6.10.1
+  oof:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:45.293220324Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: oof-has.enabled
+      name: oof-has
+      repository: file://components/oof-has
+      version: ~13.x-0
+    - name: oof-templates
+      repository: file://components/oof-templates
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Optimization Framework
+    digest: add0079b2df1d09826b71023b18d2fd2fb16a61678f078a3afa883ca1f196027
+    name: oof
+    urls:
+    - charts/oof-13.0.0.tgz
+    version: 13.0.0
+  oof-has:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:34.618593289Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: etcd.enabled
+      name: etcd
+      repository: '@local'
+      version: ~13.x-0
+    - condition: etcd-init.enabled
+      name: etcd-init
+      repository: '@local'
+      version: ~13.x-0
+    - condition: oof-has-api.enabled
+      name: oof-has-api
+      repository: file://components/oof-has-api
+      version: ~13.x-0
+    - condition: oof-has-controller.enabled
+      name: oof-has-controller
+      repository: file://components/oof-has-controller
+      version: ~13.x-0
+    - condition: oof-has-data.enabled
+      name: oof-has-data
+      repository: file://components/oof-has-data
+      version: ~13.x-0
+    - condition: oof-has-reservation.enabled
+      name: oof-has-reservation
+      repository: file://components/oof-has-reservation
+      version: ~13.x-0
+    - condition: oof-has-solver.enabled
+      name: oof-has-solver
+      repository: file://components/oof-has-solver
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Homing and Allocation Service
+    digest: 20171922bc670b10a86118eecdc6973d87d56eef29e6090987eb71e555d7c4c1
+    name: oof-has
+    urls:
+    - charts/oof-has-13.0.0.tgz
+    version: 13.0.0
+  oof-has-api:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:13.279126435Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: oof-templates
+      repository: file://../../../oof-templates
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Homing and Allocation Servicei - API
+    digest: a17c64a143abbd00d4ce83d2fee1673168709f1820b9e881ddb4417b5e890e77
+    name: oof-has-api
+    urls:
+    - charts/oof-has-api-13.0.0.tgz
+    version: 13.0.0
+  oof-has-controller:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:16.84832307Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: oof-templates
+      repository: file://../../../oof-templates
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Homing and Allocation Sservice - Controller
+    digest: 8a544c50f3f6371d94f5d6560e3d9bed4fef5e273ef2e2b8fda2f0ab649a4872
+    name: oof-has-controller
+    urls:
+    - charts/oof-has-controller-13.0.0.tgz
+    version: 13.0.0
+  oof-has-data:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:20.399636425Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: oof-templates
+      repository: file://../../../oof-templates
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Homing and Allocation Service - Data Component
+    digest: fac3a5c557bbb54a86fba1befd384e35eb91397d4d332f4476f3fb3fb1b57fb4
+    name: oof-has-data
+    urls:
+    - charts/oof-has-data-13.0.0.tgz
+    version: 13.0.0
+  oof-has-reservation:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:23.943619419Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: oof-templates
+      repository: file://../../../oof-templates
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Homing and Allocation Sevice - Reservation Component
+    digest: cbca149f054d9a011e00dac71786db56c2c8c6d95c648ccff9bdf267551e1448
+    name: oof-has-reservation
+    urls:
+    - charts/oof-has-reservation-13.0.0.tgz
+    version: 13.0.0
+  oof-has-solver:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:27.508849599Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: oof-templates
+      repository: file://../../../oof-templates
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Homing and Allocation Service - Solver Component
+    digest: c29c57cbd9ecc807cbbbe9cac4357731016b168792bd21c222fca3f2e4d1f400
+    name: oof-has-solver
+    urls:
+    - charts/oof-has-solver-13.0.0.tgz
+    version: 13.0.0
+  oof-templates:
+  - apiVersion: v2
+    created: "2024-03-06T06:53:38.020745533Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP OOF helm templates
+    digest: 6fff687bf63ff43ff90c3b7c1bee971a32d37e15949b95079e9d2a8aa0831aef
+    name: oof-templates
+    urls:
+    - charts/oof-templates-13.0.0.tgz
+    version: 13.0.0
+  oom-cert-service:
+  - apiVersion: v2
+    created: "2024-03-06T06:54:42.823897652Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: certManagerCertificate
+      repository: '@local'
+      version: ~13.x-0
+    - name: cmpv2Config
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Cert Service
+    digest: 784e1761c1b62a33948df172f2e13064c16d156470402a80d22cb368d0a6e227
+    name: oom-cert-service
+    urls:
+    - charts/oom-cert-service-13.0.0.tgz
+    version: 13.0.0
+  oran-tests:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:41.135236429Z"
+    description: A Helm chart to deploy the python sdk tests
+    digest: 63ad942ee2b84e71ccd2d7bfeeb2ecd49451c8994c3ac6aa31cd67138e41364d
+    name: oran-tests
+    urls:
+    - charts/oran-tests-1.0.0.tgz
+    version: 1.0.0
+  oran-tests-suite:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:44.239960178Z"
+    dependencies:
+    - condition: testsSuite.jenkins
+      name: jenkins
+      repository: https://charts.jenkins.io
+      version: 3.12.2
+    - condition: testsSuite.tests
+      name: oran-tests
+      repository: '@local'
+      version: ~1.0.0
+    description: Open Radio Access Network (ORAN)
+    digest: 873adc95c507d2383bdc8e5dad5436baa424f691cd3a8eebc463fa7361086bbb
+    home: https://www.o-ran.org/
+    kubeVersion: '>=1.19.0-0'
+    name: oran-tests-suite
+    sources:
+    - https://gerrit.o-ran-sc.org/r/#/admin/projects/
+    urls:
+    - charts/oran-tests-suite-1.0.0.tgz
+    version: 1.0.0
+  oru-app:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:29.800918369Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart to deploy oru-app
+    digest: 1a01fd918fd4647c90e4e4dc0b970c9552fa37949c8e3a6ff860a3af64ac739d
+    name: oru-app
+    urls:
+    - charts/oru-app-1.0.0.tgz
+    version: 1.0.0
+  platform:
+  - apiVersion: v2
+    created: "2024-03-06T06:54:49.712750584Z"
+    dependencies:
+    - condition: oom-cert-service.enabled
+      name: oom-cert-service
+      repository: '@local'
+      version: ~13.x-0
+    - condition: cmpv2-cert-provider.enabled
+      name: cmpv2-cert-provider
+      repository: '@local'
+      version: ~13.x-0
+    - condition: chartmuseum.enabled
+      name: chartmuseum
+      repository: '@local'
+      version: ~13.x-0
+    - condition: keycloak-init.enabled
+      name: keycloak-init
+      repository: '@local'
+      version: ~13.x-0
+    - condition: oauth2-proxy.enabled
+      name: oauth2-proxy
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP platform components
+    digest: b887f96e77308786fc17d2390728d9aba4e19a4508ad74a84bfad5b03cf361c1
+    name: platform
+    urls:
+    - charts/platform-13.0.0.tgz
+    version: 13.0.0
+  policy:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:46.08171927Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadb.localCluster
+      name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - condition: policy-nexus.enabled
+      name: policy-nexus
+      repository: file://components/policy-nexus
+      version: ~13.x-0
+    - condition: policy-api.enabled
+      name: policy-api
+      repository: file://components/policy-api
+      version: ~13.x-0
+    - condition: policy-pap.enabled
+      name: policy-pap
+      repository: file://components/policy-pap
+      version: ~13.x-0
+    - condition: policy-xacml-pdp.enabled
+      name: policy-xacml-pdp
+      repository: file://components/policy-xacml-pdp
+      version: ~13.x-0
+    - condition: policy-apex-pdp.enabled
+      name: policy-apex-pdp
+      repository: file://components/policy-apex-pdp
+      version: ~13.x-0
+    - condition: policy-drools-pdp.enabled
+      name: policy-drools-pdp
+      repository: file://components/policy-drools-pdp
+      version: ~13.x-0
+    - condition: policy-distribution.enabled
+      name: policy-distribution
+      repository: file://components/policy-distribution
+      version: ~13.x-0
+    - condition: policy-clamp-ac-k8s-ppnt.enabled
+      name: policy-clamp-ac-k8s-ppnt
+      repository: file://components/policy-clamp-ac-k8s-ppnt
+      version: ~13.x-0
+    - condition: policy-clamp-ac-http-ppnt.enabled
+      name: policy-clamp-ac-http-ppnt
+      repository: file://components/policy-clamp-ac-http-ppnt
+      version: ~13.x-0
+    - condition: policy-clamp-ac-a1pms-ppnt.enabled
+      name: policy-clamp-ac-a1pms-ppnt
+      repository: file://components/policy-clamp-ac-a1pms-ppnt
+      version: ~13.x-0
+    - condition: policy-clamp-ac-kserve-ppnt.enabled
+      name: policy-clamp-ac-kserve-ppnt
+      repository: file://components/policy-clamp-ac-kserve-ppnt
+      version: ~13.x-0
+    - condition: policy-clamp-ac-pf-ppnt.enabled
+      name: policy-clamp-ac-pf-ppnt
+      repository: file://components/policy-clamp-ac-pf-ppnt
+      version: ~13.x-0
+    - condition: policy-clamp-runtime-acm.enabled
+      name: policy-clamp-runtime-acm
+      repository: file://components/policy-clamp-runtime-acm
+      version: ~13.x-0
+    - condition: policy-gui.enabled
+      name: policy-gui
+      repository: file://components/policy-gui
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.postgres.localCluster
+      name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy
+    digest: 5ef59a58571dbcadb85fc831d0901f4d7496a076e2b835e055a66cf0fed02ea3
+    name: policy
+    urls:
+    - charts/policy-13.0.0.tgz
+    version: 13.0.0
+  policy-apex-pdp:
+  - apiVersion: v2
+    created: "2024-03-06T06:54:53.271755576Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy APEX PDP
+    digest: d6b95ce5f69defc10603fba7eb4033c90dae25dfb90a7bfd5e6a7737e470692c
+    name: policy-apex-pdp
+    urls:
+    - charts/policy-apex-pdp-13.0.0.tgz
+    version: 13.0.0
+  policy-api:
+  - apiVersion: v2
+    created: "2024-03-06T06:54:56.70864649Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Design API
+    digest: 41d5ceedb3d8723243d02abfe88461d308d6d1fa16e2894c4abc40ccdb956e80
+    name: policy-api
+    urls:
+    - charts/policy-api-13.0.0.tgz
+    version: 13.0.0
+  policy-clamp-ac-a1pms-ppnt:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:00.197571713Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Clamp A1PMS Participant
+    digest: ac46b28b1a044ad566467aca1bab7d5286b02d03dfa58d9988d52d8529844857
+    name: policy-clamp-ac-a1pms-ppnt
+    urls:
+    - charts/policy-clamp-ac-a1pms-ppnt-13.0.0.tgz
+    version: 13.0.0
+  policy-clamp-ac-http-ppnt:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:03.70882689Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Clamp Controlloop Http Participant
+    digest: 58716bd36b6555ba780bacf2437c6032e456e35159dd2cfd50c08642ba2a4475
+    name: policy-clamp-ac-http-ppnt
+    urls:
+    - charts/policy-clamp-ac-http-ppnt-13.0.0.tgz
+    version: 13.0.0
+  policy-clamp-ac-k8s-ppnt:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:07.214897984Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Clamp Controlloop K8s Participant
+    digest: fa03cfa80d1f3bfd247c8f31591c10b22231f050f44dc6d7c6f25b4f0172edd9
+    name: policy-clamp-ac-k8s-ppnt
+    urls:
+    - charts/policy-clamp-ac-k8s-ppnt-13.0.0.tgz
+    version: 13.0.0
+  policy-clamp-ac-kserve-ppnt:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:10.695696323Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Clamp Kserve Participant
+    digest: 95b2086a683c02bfaec97ce6ac79c7d9767cac68feeef3feafb9eaea09623bdd
+    name: policy-clamp-ac-kserve-ppnt
+    urls:
+    - charts/policy-clamp-ac-kserve-ppnt-13.0.0.tgz
+    version: 13.0.0
+  policy-clamp-ac-pf-ppnt:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:14.177524235Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Clamp Controlloop Policy Participant
+    digest: 80ac7d9ee1399ec105a2da33a9830b74190d941b765d4646f7e17001bb88a386
+    name: policy-clamp-ac-pf-ppnt
+    urls:
+    - charts/policy-clamp-ac-pf-ppnt-13.0.0.tgz
+    version: 13.0.0
+  policy-clamp-runtime-acm:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:17.660260761Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Clamp Controlloop Runtime
+    digest: b2900ebf21a95e66e1f38f432dfa6c350e8f375f25e64a6fef122c73194ae1d1
+    name: policy-clamp-runtime-acm
+    urls:
+    - charts/policy-clamp-runtime-acm-13.0.0.tgz
+    version: 13.0.0
+  policy-distribution:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:21.088216988Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Distribution
+    digest: a0548fbe3936002123e894c362bc3e15137776b797e9525ca7866c853e0c0079
+    name: policy-distribution
+    urls:
+    - charts/policy-distribution-13.0.0.tgz
+    version: 13.0.0
+  policy-drools-pdp:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:24.503371719Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Drools Policy Engine (PDP-D)
+    digest: cac020e730c43a47b70fc21596648153cdfe5365194c36967022b41169f897b5
+    name: policy-drools-pdp
+    urls:
+    - charts/policy-drools-pdp-13.0.0.tgz
+    version: 13.0.0
+  policy-gui:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:27.884503517Z"
+    dependencies:
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy GUI
+    digest: 6071e204ef6f819de0b03430a084fd618526689b9d04480f6a10b3f3fb5cebbb
+    name: policy-gui
+    urls:
+    - charts/policy-gui-13.0.0.tgz
+    version: 13.0.0
+  policy-nexus:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:31.311281424Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Nexus
+    digest: c4ffa5eef2a5f02bf2ac9f53db981364e474cdb1c85a361a6c6d468e8ce57a84
+    name: policy-nexus
+    urls:
+    - charts/policy-nexus-13.0.0.tgz
+    version: 13.0.0
+  policy-pap:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:34.803700906Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy Administration (PAP)
+    digest: 3675ebc23543568ce430af6b1f3efba1eca3052ff976b7a961231774ed0837b9
+    name: policy-pap
+    urls:
+    - charts/policy-pap-13.0.0.tgz
+    version: 13.0.0
+  policy-xacml-pdp:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:38.233258375Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Policy XACML PDP (PDP-X)
+    digest: 0177f5f08acc323fc82efc6ebefed238cb390bc18bfa1418dded758de806f313
+    name: policy-xacml-pdp
+    urls:
+    - charts/policy-xacml-pdp-13.0.0.tgz
+    version: 13.0.0
+  policymanagementservice:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2024-03-06T06:59:30.225674787Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for Policy Management Service
+    digest: 791c178ce4d3f9ced3fd44a9ebfd7ff25e5fb2ada02257e071739c047786c133
+    name: policymanagementservice
+    urls:
+    - charts/policymanagementservice-2.0.0.tgz
+    version: 2.0.0
+  portal-ng:
+  - apiVersion: v2
+    created: "2024-03-06T06:55:59.614592357Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: portal-ng-bff
+      repository: '@local'
+      version: ~13.x-0
+    - name: portal-ng-ui
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Next Generation Portal
+    digest: 87d408714351b77ed07e0ac439f4c74c8de49cb66d65ce04227d58ef8fce7a53
+    name: portal-ng
+    urls:
+    - charts/portal-ng-13.0.0.tgz
+    version: 13.0.0
+  portal-ng-bff:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-03-06T06:55:49.647794894Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Helm chart of the backend for ONAP portal. This micro service follows the backend for frontend approach.
+    digest: 33abcf44cad6549f94b3de8a90ff495a15c3d48ef7aa76e35dafd3d291da83a8
+    name: portal-ng-bff
+    type: application
+    urls:
+    - charts/portal-ng-bff-13.0.0.tgz
+    version: 13.0.0
+  portal-ng-ui:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-03-06T06:55:53.087906735Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Helm chart of the UI part of the ONAP portal.
+    digest: 0615052a76ef1b0fb54b7f453a9f936cc2f6890870ee86eb454a2a42dda60366
+    name: portal-ng-ui
+    type: application
+    urls:
+    - charts/portal-ng-ui-13.0.0.tgz
+    version: 13.0.0
+  postgres:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:10.246808011Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    description: ONAP Postgres Server
+    digest: fcddeb584ac15da3398098cf54565287476b20a465f195440184bad26312da4d
+    name: postgres
+    urls:
+    - charts/postgres-13.0.0.tgz
+    version: 13.0.0
+  postgres-init:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:13.660798455Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: Chart for Postgres init job
+    digest: 163087da301a99f5a3effa4d99a0612d129efb936f14c1a090c7318f14c856a8
+    name: postgres-init
+    urls:
+    - charts/postgres-init-13.0.0.tgz
+    version: 13.0.0
+  ran-nssmf-simulator:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:41.419636471Z"
+    description: A Helm chart for ran nssmf simulator
+    digest: 3ca1774da1a047a1921e4c78365d354c3fc01766c31f76068043fc0d4bf8c977
+    name: ran-nssmf-simulator
+    urls:
+    - charts/ran-nssmf-simulator-1.0.0.tgz
+    version: 1.0.0
+  rappcatalogueservice:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2024-03-06T06:59:30.619897805Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart for rAPP Catalogue Service
+    digest: 59a537fb71b30ec58c959601c4a4effba10b335ad5c79da10b7fbfccab13148c
+    name: rappcatalogueservice
+    urls:
+    - charts/rappcatalogueservice-1.0.0.tgz
+    version: 1.0.0
+  readinessCheck:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:07.311839192Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    description: Template used to wait for other deployment/sts/jobs in onap
+    digest: f33b2c3412839d4d2360b43a7b6abe3ba66b6ec4b00ce37a550687b2a359bc7f
+    name: readinessCheck
+    urls:
+    - charts/readinessCheck-13.0.0.tgz
+    version: 13.0.0
+  repository-wrapper:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:23.763136687Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    description: Wrapper chart to allow docker secret to be shared all instances
+    digest: 128ae475f73ea735e4f76e620d7cbd082c1cffb187add271ea27311bc09c2b24
+    name: repository-wrapper
+    urls:
+    - charts/repository-wrapper-13.0.0.tgz
+    version: 13.0.0
+  repositoryGenerator:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:03.97746253Z"
+    description: Template used to generate the right repository link
+    digest: a0be3de3dfb160beee85bbe12d523adbcc845747102851b0f81012f89193079f
+    name: repositoryGenerator
+    urls:
+    - charts/repositoryGenerator-13.0.0.tgz
+    version: 13.0.0
+  ric-common:
+  - apiVersion: v2
+    created: "2024-03-06T06:59:25.273333497Z"
+    description: Common templates for inclusion in other charts
+    digest: b62ea39b7d0c023c92226b6d7f46492a33ce458310bb79c57ede7e740ab5fc11
+    name: ric-common
+    urls:
+    - charts/ric-common-3.3.2.tgz
+    version: 3.3.2
+  robot:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:30.313435353Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A helm Chart for kubernetes-ONAP Robot
+    digest: 6ba83ff26b9b7432e63e87cd33d1e6746657aab120e269304b5e955beb34e780
+    name: robot
+    urls:
+    - charts/robot-13.0.0.tgz
+    version: 13.0.0
+  roles-wrapper:
+  - apiVersion: v2
+    created: "2024-03-06T06:48:16.983849669Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    description: Wrapper chart to allow default roles to be shared among onap instances
+    digest: 82f35a5b127811a92e8c2693b4ba5232549a22279100849036b7b96144cd9a89
+    name: roles-wrapper
+    urls:
+    - charts/roles-wrapper-13.0.0.tgz
+    version: 13.0.0
+  ru-du-simulators:
+  - apiVersion: v1
+    appVersion: test
+    created: "2024-03-06T06:59:44.745054633Z"
+    dependencies:
+    - condition: ru-du-simulators.topologyServer
+      name: topology-server
+      repository: '@local'
+      version: ~1.0.0
+    - condition: ru-du-simulators.ruSimulator
+      name: ru-simulator
+      repository: '@local'
+      version: ~1.0.0
+    - condition: ru-du-simulators.duSimulator
+      name: du-simulator
+      repository: '@local'
+      version: ~1.0.0
+    description: Open Radio Access Network (ORAN)
+    digest: dc440dafa035351ffc48846a75a6d7c87ba1a6f43a352a18357b58f4082aab0d
+    home: https://www.onap.org
+    icon: https://wiki.onap.org/download/thumbnails/1015829/onap_704x271%20copy.png?version=1&modificationDate=1488326334000&api=v2
+    kubeVersion: '>=1.11.5-0'
+    name: ru-du-simulators
+    sources:
+    - https://gerrit.o-ran-sc.org/r/#/admin/projects/
+    urls:
+    - charts/ru-du-simulators-1.0.0.tgz
+    version: 1.0.0
+  ru-simulator:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:41.723411057Z"
+    description: A Helm chart to deploy o-ru-simulator
+    digest: 0a09f60256503f6e0ffe2696ff080456c924aaf03c177edcd8bbbf2bc0182117
+    name: ru-simulator
+    urls:
+    - charts/ru-simulator-1.0.0.tgz
+    version: 1.0.0
+  sdc:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:30.623510716Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: sdc-be
+      repository: file://components/sdc-be
+      version: ~13.x-0
+    - name: sdc-cs
+      repository: file://components/sdc-cs
+      version: ~13.x-0
+    - name: sdc-fe
+      repository: file://components/sdc-fe
+      version: ~13.x-0
+    - name: sdc-onboarding-be
+      repository: file://components/sdc-onboarding-be
+      version: ~13.x-0
+    - condition: sdc-wfd.enabled
+      name: sdc-wfd-be
+      repository: file://components/sdc-wfd-be
+      version: ~13.x-0
+    - condition: sdc-wfd.enabled
+      name: sdc-wfd-fe
+      repository: file://components/sdc-wfd-fe
+      version: ~13.x-0
+    - condition: sdcHelmValidator.enabled
+      name: sdc-helm-validator
+      repository: file://components/sdc-helm-validator
+      version: ~13.x-0
+    description: Service Design and Creation Umbrella Helm charts
+    digest: df9f55b55485d324de10b5f05945367f7751fd8cb54332463ecca94f534c3043
+    name: sdc
+    urls:
+    - charts/sdc-13.0.0.tgz
+    version: 13.0.0
+  sdc-be:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:03.265180091Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Service Design and Creation Backend API
+    digest: 7b87a2e9ffb4e6c66aa3d719021dc1dadabc94835f219c550a9ef1083aff5ed9
+    name: sdc-be
+    urls:
+    - charts/sdc-be-13.0.0.tgz
+    version: 13.0.0
+  sdc-cs:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:06.833506091Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.sdc_cassandra.localCluster
+      name: cassandra
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Service Design and Creation Cassandra
+    digest: 22e4538ffb0d3a2510eacb47ede06623f2b354f49e1f8f628f67305ae204375a
+    name: sdc-cs
+    urls:
+    - charts/sdc-cs-13.0.0.tgz
+    version: 13.0.0
+  sdc-fe:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:10.254191844Z"
+    dependencies:
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Service Design and Creation Front End
+    digest: eb9f6171ae45dc8c95934e06408be5ca10b9cb3b9f75b5453e0ad132e78b3f79
+    name: sdc-fe
+    urls:
+    - charts/sdc-fe-13.0.0.tgz
+    version: 13.0.0
+  sdc-helm-validator:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:13.674755103Z"
+    dependencies:
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Service Design and Creation Helm Validator
+    digest: 73d15494802a2273673bd9caa4d0c291d584322006551010decf836efb5d5b45
+    name: sdc-helm-validator
+    urls:
+    - charts/sdc-helm-validator-13.0.0.tgz
+    version: 13.0.0
+  sdc-onboarding-be:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:17.082544963Z"
+    dependencies:
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Service Design and Creation Onboarding API
+    digest: 9bbbf749d4e903cab8ac35aebe672dd62c0f462feca3992053c3059cfef4ff23
+    name: sdc-onboarding-be
+    urls:
+    - charts/sdc-onboarding-be-13.0.0.tgz
+    version: 13.0.0
+  sdc-wfd-be:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:20.488951374Z"
+    dependencies:
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Service Design and Creation Workflow Designer backend
+    digest: afe57128d1fffce130096a1dc7917db2cbd0898e69d298afc03942f76bb72b42
+    name: sdc-wfd-be
+    urls:
+    - charts/sdc-wfd-be-13.0.0.tgz
+    version: 13.0.0
+  sdc-wfd-fe:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:23.912760476Z"
+    dependencies:
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Service Design and Creation Workflow Designer frontend
+    digest: 3ac1341e5c529b025403e12b450563adb1bc4ae814e91b41fd7a7d8345c23506
+    name: sdc-wfd-fe
+    urls:
+    - charts/sdc-wfd-fe-13.0.0.tgz
+    version: 13.0.0
+  sdnc:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:55.657118436Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: certManagerCertificate
+      repository: '@local'
+      version: ~13.x-0
+    - name: logConfiguration
+      repository: '@local'
+      version: ~13.x-0
+    - condition: network-name-gen.enabled
+      name: network-name-gen
+      repository: '@local'
+      version: ~13.x-0
+    - condition: dgbuilder.enabled
+      name: dgbuilder
+      repository: '@local'
+      version: ~13.x-0
+    - condition: config.geoEnabled
+      name: sdnc-prom
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadbGalera.localCluster
+      name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - condition: sdnc.elasticsearch.enabled,elasticsearch.enabled
+      name: elasticsearch
+      repository: '@local'
+      version: ~13.x-0
+    - condition: sdnc.dmaap-listener.enabled,dmaap-listener.enabled
+      name: dmaap-listener
+      repository: file://components/dmaap-listener/
+      version: ~13.x-0
+    - condition: sdnc.ueb-listener.enabled,ueb-listener.enabled
+      name: ueb-listener
+      repository: file://components/ueb-listener/
+      version: ~13.x-0
+    - condition: sdnc.sdnc-ansible-server.enabled,sdnc-ansible-server.enabled
+      name: sdnc-ansible-server
+      repository: file://components/sdnc-ansible-server/
+      version: ~13.x-0
+    - condition: sdnc.sdnc-web.enabled,sdnc-web.enabled
+      name: sdnc-web
+      repository: file://components/sdnc-web/
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: SDN Controller
+    digest: ff12062b37286dcf26925469c79684277018a93545fd2e14ee405a4a99fcafcf
+    name: sdnc
+    urls:
+    - charts/sdnc-13.0.0.tgz
+    version: 13.0.0
+  sdnc-ansible-server:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:37.785576505Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: SDN-C Ansible Server
+    digest: c48b9f9dc18e573562dcef4f034f818bdc07a9beb5df8458202553966fa9f106
+    name: sdnc-ansible-server
+    urls:
+    - charts/sdnc-ansible-server-13.0.0.tgz
+    version: 13.0.0
+  sdnc-prom:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:41.264480606Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP SDNC Policy Driven Ownership Management
+    digest: 56f6d8f88d2bbf93f75c996eecc717bf006ae6cea7440f2b2622ee80848be63e
+    name: sdnc-prom
+    urls:
+    - charts/sdnc-prom-13.0.0.tgz
+    version: 13.0.0
+  sdnc-web:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:44.731113218Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: SDN-C Web Server
+    digest: 07c3adf5ed726c155c451412edaed4ba15c5885127802640e9702d191e9b4ebf
+    name: sdnc-web
+    urls:
+    - charts/sdnc-web-13.0.0.tgz
+    version: 13.0.0
+  serviceAccount:
+  - apiVersion: v2
+    created: "2024-03-06T06:47:10.633742219Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: ~13.x-0
+    description: Template used to create the right Service Accounts / Role / RoleBinding
+    digest: 149971dc8f01623d020d904c7589dbab3f02507820e44ede2e9d44d464f39dd9
+    name: serviceAccount
+    urls:
+    - charts/serviceAccount-13.0.1.tgz
+    version: 13.0.1
+  so:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:03.28851434Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadbGalera.localCluster
+      name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://components/soHelpers
+      version: ~13.x-0
+    - condition: so-admin-cockpit.enabled
+      name: so-admin-cockpit
+      repository: file://components/so-admin-cockpit
+      version: ~13.x-0
+    - name: so-bpmn-infra
+      repository: file://components/so-bpmn-infra
+      version: ~13.x-0
+    - condition: so-catalog-db-adapter.enabled
+      name: so-catalog-db-adapter
+      repository: file://components/so-catalog-db-adapter
+      version: ~13.x-0
+    - condition: so-cnf-adapter.enabled
+      name: so-cnf-adapter
+      repository: file://components/so-cnf-adapter
+      version: ~13.x-0
+    - condition: so-cnfm-lcm.enabled
+      name: so-cnfm-lcm
+      repository: file://components/so-cnfm-lcm
+      version: ~13.x-0
+    - condition: so-etsi-nfvo-ns-lcm.enabled
+      name: so-etsi-nfvo-ns-lcm
+      repository: file://components/so-etsi-nfvo-ns-lcm
+      version: ~13.x-0
+    - condition: so-etsi-sol003-adapter.enabled
+      name: so-etsi-sol003-adapter
+      repository: file://components/so-etsi-sol003-adapter
+      version: ~13.x-0
+    - name: so-mariadb
+      repository: file://components/so-mariadb
+      version: ~13.x-0
+    - condition: so-nssmf-adapter.enabled
+      name: so-nssmf-adapter
+      repository: file://components/so-nssmf-adapter
+      version: ~13.x-0
+    - condition: so-oof-adapter.enabled
+      name: so-oof-adapter
+      repository: file://components/so-oof-adapter
+      version: ~13.x-0
+    - condition: so-openstack-adapter.enabled
+      name: so-openstack-adapter
+      repository: file://components/so-openstack-adapter
+      version: ~13.x-0
+    - name: so-request-db-adapter
+      repository: file://components/so-request-db-adapter
+      version: ~13.x-0
+    - name: so-sdc-controller
+      repository: file://components/so-sdc-controller
+      version: ~13.x-0
+    - condition: so-sdnc-adapter.enabled
+      name: so-sdnc-adapter
+      repository: file://components/so-sdnc-adapter
+      version: ~13.x-0
+    - condition: so-ve-vnfm-adapter.enabled
+      name: so-ve-vnfm-adapter
+      repository: file://components/so-ve-vnfm-adapter
+      version: ~13.x-0
+    - condition: so-etsi-sol005-adapter.enabled
+      name: so-etsi-sol005-adapter
+      repository: file://components/so-etsi-sol005-adapter
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP Service Orchestrator
+    digest: 5c638ac8ec2b94a00c3286a4f78bf09bd05652f5ad0c9524b253fab8624ad39f
+    name: so
+    urls:
+    - charts/so-13.0.0.tgz
+    version: 13.0.0
+  so-admin-cockpit:
+  - apiVersion: v2
+    created: "2024-03-06T06:57:02.513981079Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for ONAP Service Orchestration Monitoring
+    digest: fba8764ed7e4a4650dd5314fe587210b6592111294570ac9db27dfb1d513f7cc
+    name: so-admin-cockpit
+    urls:
+    - charts/so-admin-cockpit-13.0.0.tgz
+    version: 13.0.0
+  so-bpmn-infra:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-03-06T06:57:06.027908237Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for SO Bpmn Infra
+    digest: 28f8571beff9bcab2f06218f02616f5943e77ff080d841fb7b5117a6a98a5bd0
+    name: so-bpmn-infra
+    urls:
+    - charts/so-bpmn-infra-13.0.0.tgz
+    version: 13.0.0
+  so-catalog-db-adapter:
+  - apiVersion: v2
+    created: "2024-03-06T06:57:09.542806199Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for so-catalog-db-adapter
+    digest: a7175759e61c010d791eb05ba9b3ebc2cc67466b87fc8fa31ec8b33a03bb71c6
+    name: so-catalog-db-adapter
+    urls:
+    - charts/so-catalog-db-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-cnf-adapter:
+  - apiVersion: v2
+    appVersion: 1.7.1
+    created: "2024-03-06T06:57:13.067366011Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for Kubernetes
+    digest: 3746c4c4075b505c228f1de4965137e071805f44c46fcce0e6527bf26d7223a5
+    name: so-cnf-adapter
+    urls:
+    - charts/so-cnf-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-cnfm-lcm:
+  - apiVersion: v2
+    created: "2024-03-06T06:57:16.527752775Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP SO CNFM LCM
+    digest: b31a54fac8023fcec68d075a58f06d965cdea7ceb90a501575ea292ee6b2546a
+    name: so-cnfm-lcm
+    urls:
+    - charts/so-cnfm-lcm-13.0.0.tgz
+    version: 13.0.0
+  so-etsi-nfvo-ns-lcm:
+  - apiVersion: v2
+    created: "2024-03-06T06:57:19.988236627Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP SO ETSI NFVO NS LCM
+    digest: 6efa3c8e5296507e4ac6ce427918d4b528ba62d110054e8888eafb9e2a67b93d
+    name: so-etsi-nfvo-ns-lcm
+    urls:
+    - charts/so-etsi-nfvo-ns-lcm-13.0.0.tgz
+    version: 13.0.0
+  so-etsi-sol003-adapter:
+  - apiVersion: v2
+    created: "2024-03-06T06:57:23.44176456Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP SO ETSI SOL003 Adapter
+    digest: d5ab99a5900b7d51f4eeb5afb26363774c7d03cd9479528b6630e86a482d626e
+    name: so-etsi-sol003-adapter
+    urls:
+    - charts/so-etsi-sol003-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-etsi-sol005-adapter:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-03-06T06:57:26.958099284Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for Kubernetes
+    digest: 43205e7528ba80d59b0d7fb865cfd1aa027b53d82899f79f354dbc74fc9cb3bc
+    name: so-etsi-sol005-adapter
+    urls:
+    - charts/so-etsi-sol005-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-mariadb:
+  - apiVersion: v2
+    created: "2024-03-06T06:57:30.446135728Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: MariaDB Service
+    digest: 863531b806d117390206dc33ee5c34865ee1f86c2e0e4d1425a1e7484fbb1229
+    name: so-mariadb
+    urls:
+    - charts/so-mariadb-13.0.0.tgz
+    version: 13.0.0
+  so-nssmf-adapter:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-03-06T06:57:33.971833269Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for Kubernetes
+    digest: 5cc13bf3a7c312b84d5c5989d8bf4cfbb2726ab260f3b71c360445715092cfe3
+    name: so-nssmf-adapter
+    urls:
+    - charts/so-nssmf-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-oof-adapter:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-03-06T06:57:37.434305727Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for Kubernetes
+    digest: 3edd32fff5296c7c3c2b8a892ceb67238a6a3c502c9eee30ea92ab73f8da87e8
+    name: so-oof-adapter
+    urls:
+    - charts/so-oof-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-openstack-adapter:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-03-06T06:57:40.944733123Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for Kubernetes
+    digest: 950998d481a9ca056b23580e04df69737c145befdb37488b5c6e0840b123e6e2
+    name: so-openstack-adapter
+    urls:
+    - charts/so-openstack-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-request-db-adapter:
+  - apiVersion: v2
+    created: "2024-03-06T06:57:44.461821792Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for request-db-adapter
+    digest: 9a8242c308dd6a86ee7b1f6cbb3846d97c5b9743a3839fcd077a20fc737535af
+    name: so-request-db-adapter
+    urls:
+    - charts/so-request-db-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-sdc-controller:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-03-06T06:57:47.989122911Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for Kubernetes
+    digest: bed29c622c6249126424abaa38e677de172459614a87b59022314b66e2bcf4cb
+    name: so-sdc-controller
+    urls:
+    - charts/so-sdc-controller-13.0.0.tgz
+    version: 13.0.0
+  so-sdnc-adapter:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-03-06T06:57:51.449511898Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: soHelpers
+      repository: file://../soHelpers
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for Kubernetes
+    digest: fc36278aa11d6f4a69e17ed101583041b13c0123982fff4106fd6ec4ec8e0aa4
+    name: so-sdnc-adapter
+    urls:
+    - charts/so-sdnc-adapter-13.0.0.tgz
+    version: 13.0.0
+  so-ve-vnfm-adapter:
+  - apiVersion: v2
+    created: "2024-03-06T06:57:54.943118542Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP SO VE VNFM Adapter (SOL002)
+    digest: 5222ccec95a3d272b61ea5860ab53c2cc9c1f260d90afea7a0685882b6e8bdc9
+    name: so-ve-vnfm-adapter
+    urls:
+    - charts/so-ve-vnfm-adapter-13.0.0.tgz
+    version: 13.0.0
+  soHelpers:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:59.098062598Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    description: A Helm chart for SO helpers
+    digest: 878dc99ea7c63ac453509eca5e5d34272d622c21fb731c1a8c63a03b84f7005d
+    name: soHelpers
+    urls:
+    - charts/soHelpers-13.0.0.tgz
+    version: 13.0.0
+  strimzi:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:09.876492764Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - condition: strimzi-kafka-bridge.enabled
+      name: strimzi-kafka-bridge
+      repository: file://components/strimzi-kafka-bridge
+      version: ~13.x-0
+    description: ONAP Strimzi Kafka
+    digest: 2c5ac6803a408a88ba05a25de5070a93d1af542089b1e6e6bbef36d8f2646adc
+    name: strimzi
+    urls:
+    - charts/strimzi-13.0.0.tgz
+    version: 13.0.0
+  strimzi-kafka-operator:
+  - apiVersion: v2
+    appVersion: 0.36.1
+    created: "2024-01-23T03:29:13.220798158Z"
+    description: 'Strimzi: Apache Kafka running on Kubernetes'
+    digest: 8ff93fe6a62e0bd39600c48c407d71fac75a283815ec3ce9c85f59e3c588dff3
+    home: https://strimzi.io/
+    icon: https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/main/documentation/logo/strimzi_logo.png
+    keywords:
+    - kafka
+    - queue
+    - stream
+    - event
+    - messaging
+    - datastore
+    - topic
+    maintainers:
+    - name: Frawless
+    - name: ppatierno
+    - name: samuel-hawker
+    - name: scholzj
+    - name: tombentley
+    - name: sknot-rh
+    - name: PaulRMellor
+    - name: im-konge
+    - name: see-quick
+    name: strimzi-kafka-operator
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    urls:
+    - charts/strimzi-kafka-operator-0.36.1.tgz
+    version: 0.36.1
+  timescaledb:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-03-06T06:48:20.427155484Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: file://../repositoryGenerator
+      version: ~13.x-0
+    description: ONAP timescaledb
+    digest: e649482e6184a0c220f139781e117466bfadc8b91b10decefc6ddcdcefcf9817
+    name: timescaledb
+    urls:
+    - charts/timescaledb-13.0.0.tgz
+    version: 13.0.0
+  topology:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:31.025578355Z"
+    dependencies:
+    - name: nonrtric-common
+      repository: '@local'
+      version: ^2.0.0
+    description: A Helm chart to deploy topology
+    digest: 488719115a78f5c4680976ab58a20283e7bd382d09ded55b971cf9e7fac9ae5a
+    name: topology
+    urls:
+    - charts/topology-1.0.0.tgz
+    version: 1.0.0
+  topology-server:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2024-03-06T06:59:42.024033868Z"
+    description: A Helm chart to deploy the topology server
+    digest: 5d52ee3146bd75008e187d74335964d4dd359519420d977638300e7e6b1165d4
+    name: topology-server
+    urls:
+    - charts/topology-server-1.0.0.tgz
+    version: 1.0.0
+  ueb-listener:
+  - apiVersion: v2
+    created: "2024-03-06T06:56:48.202523299Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: SDNC UEB Listener
+    digest: 73f98b4bd0ab1c16c9a80c37926fb142ca703d2b8ac7fb25e7910998602929dd
+    name: ueb-listener
+    urls:
+    - charts/ueb-listener-13.0.0.tgz
+    version: 13.0.0
+  uui:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:27.090120191Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: uui-server
+      repository: file://components/uui-server
+      version: ~13.x-0
+    - name: uui-nlp
+      repository: file://components/uui-nlp
+      version: ~13.x-0
+    - name: uui-intent-analysis
+      repository: file://components/uui-intent-analysis
+      version: ~13.x-0
+    description: ONAP uui
+    digest: 2fbd2eaa418c3dfa0740c35eb1a8d5b1af90815d8f3d5a3baba5fd63f03fdaab
+    name: uui
+    urls:
+    - charts/uui-13.0.0.tgz
+    version: 13.0.0
+  uui-intent-analysis:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:13.488142549Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP uui intent analysis
+    digest: 85873367a77dc18df7ba90e7a66ca69934c189c70396462d213dd8a67f497d9f
+    name: uui-intent-analysis
+    urls:
+    - charts/uui-intent-analysis-13.0.0.tgz
+    version: 13.0.0
+  uui-nlp:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:16.917437292Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP UUI NLP
+    digest: 55448dccd95ae7613db48d663cb2b7019270bd8eecba5019afd5c168fa3c3ee3
+    name: uui-nlp
+    urls:
+    - charts/uui-nlp-13.0.0.tgz
+    version: 13.0.0
+  uui-server:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:20.413170021Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - name: serviceAccount
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP uui server
+    digest: 91f50ed2fcd4c811b2eb8ac1669a098f15ad5472eab64a8d9d1eaffaaea4864e
+    name: uui-server
+    urls:
+    - charts/uui-server-13.0.0.tgz
+    version: 13.0.0
+  vfc:
+  - apiVersion: v2
+    created: "2024-03-06T06:59:00.860709575Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - condition: global.mariadbGalera.localCluster
+      name: mariadb-galera
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - condition: vfc-generic-vnfm-driver.enabled
+      name: vfc-generic-vnfm-driver
+      repository: file://components/vfc-generic-vnfm-driver
+      version: ~13.x-0
+    - condition: vfc-huawei-vnfm-driver.enabled
+      name: vfc-huawei-vnfm-driver
+      repository: file://components/vfc-huawei-vnfm-driver
+      version: ~13.x-0
+    - condition: vfc-nslcm.enabled
+      name: vfc-nslcm
+      repository: file://components/vfc-nslcm
+      version: ~13.x-0
+    - condition: vfc-redis.enabled
+      name: vfc-redis
+      repository: file://components/vfc-redis
+      version: ~13.x-0
+    - condition: vfc-vnflcm.enabled
+      name: vfc-vnflcm
+      repository: file://components/vfc-vnflcm
+      version: ~13.x-0
+    - condition: vfc-vnfmgr.enabled
+      name: vfc-vnfmgr
+      repository: file://components/vfc-vnfmgr
+      version: ~13.x-0
+    - condition: vfc-vnfres.enabled
+      name: vfc-vnfres
+      repository: file://components/vfc-vnfres
+      version: ~13.x-0
+    - condition: vfc-zte-vnfm-driver.enabled
+      name: vfc-zte-vnfm-driver
+      repository: file://components/vfc-zte-vnfm-driver
+      version: ~13.x-0
+    description: ONAP Virtual Function Controller (VF-C)
+    digest: b7df10a367cde751dc5d5af4cbe7372a382f3855af85ae2a80ea30158853b1f6
+    name: vfc
+    urls:
+    - charts/vfc-13.0.0.tgz
+    version: 13.0.0
+  vfc-generic-vnfm-driver:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:30.52296045Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VFC - Generic VNFM Driver
+    digest: 57f39e42ff0661e519acaa2b72c10861960668742c1b4dd929fb45fa8c5c5a65
+    name: vfc-generic-vnfm-driver
+    urls:
+    - charts/vfc-generic-vnfm-driver-13.0.0.tgz
+    version: 13.0.0
+  vfc-huawei-vnfm-driver:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:33.884684019Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VFC - Huawei VNFM Driver
+    digest: c3c58e4c85536c49a03af9f70f2b651c1c26d1443b86a1c02a104ab3c3efafa2
+    name: vfc-huawei-vnfm-driver
+    urls:
+    - charts/vfc-huawei-vnfm-driver-13.0.0.tgz
+    version: 13.0.0
+  vfc-nslcm:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:37.263421965Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VFC - NS Life Cycle Management
+    digest: ddfa3c5c57b569367703bf9ad39163cb77338470506763f54d08a077924d437a
+    name: vfc-nslcm
+    urls:
+    - charts/vfc-nslcm-13.0.0.tgz
+    version: 13.0.0
+  vfc-redis:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:40.622980259Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VFC - REDIS
+    digest: 231e18915fcdea5e52ced762073b3843cc9a3cc3130fdfe9067511268a0518f6
+    name: vfc-redis
+    urls:
+    - charts/vfc-redis-13.0.0.tgz
+    version: 13.0.0
+  vfc-vnflcm:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:43.986345686Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VFC - VNF Life Cycle Management
+    digest: ea94f7221daacdfd099086d7235018105b11a137854cfd00da3c6363818a5fd4
+    name: vfc-vnflcm
+    urls:
+    - charts/vfc-vnflcm-13.0.0.tgz
+    version: 13.0.0
+  vfc-vnfmgr:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:47.372741573Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VFC - VNF Manager
+    digest: c15406bb935a4027488ed3d9b36f0e76c91ab62d08f7752dd6c37bfc8ac77ddb
+    name: vfc-vnfmgr
+    urls:
+    - charts/vfc-vnfmgr-13.0.0.tgz
+    version: 13.0.0
+  vfc-vnfres:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:50.72893449Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VFC - VNF Resource Manager
+    digest: d427ebe4b25dfb0cc2aa3dfe4f6e1672a63ade788795ed8642984ec02539d7be
+    name: vfc-vnfres
+    urls:
+    - charts/vfc-vnfres-13.0.0.tgz
+    version: 13.0.0
+  vfc-zte-vnfm-driver:
+  - apiVersion: v2
+    created: "2024-03-06T06:58:54.099485798Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VFC - ZTE VNFM Driver
+    digest: 3330342ce5f3c4e5317cd988ccde5173fae592c1ded468410ff87a834cbd3419
+    name: vfc-zte-vnfm-driver
+    urls:
+    - charts/vfc-zte-vnfm-driver-13.0.0.tgz
+    version: 13.0.0
+  vnfsdk:
+  - apiVersion: v2
+    created: "2024-03-06T06:59:04.424360652Z"
+    dependencies:
+    - name: common
+      repository: '@local'
+      version: ~13.x-0
+    - name: postgres
+      repository: '@local'
+      version: ~13.x-0
+    - name: repositoryGenerator
+      repository: '@local'
+      version: ~13.x-0
+    - name: readinessCheck
+      repository: '@local'
+      version: ~13.x-0
+    description: ONAP VNF SDK
+    digest: 61fe42a26db3be6e816aeb12cb32990b83a077fb416f15d64799b398067a58c1
+    name: vnfsdk
+    urls:
+    - charts/vnfsdk-13.0.0.tgz
+    version: 13.0.0
+generated: "2024-03-06T06:59:45Z"
+serverInfo: {}

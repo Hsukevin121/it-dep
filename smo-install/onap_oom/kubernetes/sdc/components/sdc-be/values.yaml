@@ -1,0 +1,185 @@
+# Copyright © 2017 Amdocs, Bell Canada
+# Modifications Copyright © 2018 AT&T, ZTE
+# Modifications Copyright © 2022 Nordix Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#################################################################
+# Global configuration defaults.
+#################################################################
+global:
+  nodePortPrefix: 302
+  sdc_cassandra:
+    #This flag allows SDC to instantiate its own cluster, serviceName
+    #should be sdc-cs if this flag is enabled
+    localCluster: false
+    #The cassandra service name to connect to (default: shared cassandra service)
+    serviceName: cassandra
+    #Shared cassandra cluster replicaCount, should be changed if localCluster is enabled
+    #to match with its own cluster replica
+    replicaCount: 3
+    clusterName: cassandra
+    dataCenter: Pod
+  # Global Strimzi kafka config overridden
+  # from parent values.yaml
+  kafka:
+    useKafka: overridden-from-parent-values-yaml
+
+#################################################################
+# Application configuration defaults.
+#################################################################
+# application image
+image: onap/sdc-backend-all-plugins:1.13.6
+backendInitImage: onap/sdc-backend-init:1.13.6
+
+pullPolicy: Always
+
+# flag to enable debugging - application support required
+debugEnabled: false
+
+#environment file
+env:
+  name: &env AUTO
+
+#################################################################
+# SDC Config part
+#################################################################
+config:
+  javaOptions: "-Xmx1536m -Xms1536m"
+  cassandraSslEnabled: "false"
+
+kafkaUser:
+  acls:
+    - name: sdc
+      suffix: *env
+      type: group
+      operations: [Read]
+    - name: SDC-DISTR
+      type: topic
+      patternType: prefix
+      operations: [Read, Write]
+
+
+# default number of instances
+replicaCount: 1
+
+nodeSelector: {}
+
+affinity: {}
+
+# probe configuration parameters
+liveness:
+  initialDelaySeconds: 1
+  periodSeconds: 10
+  timeoutSeconds: 180
+  successThreshold: 1
+  failureThreshold: 3
+  # necessary to disable liveness probe when setting breakpoints
+  # in debugger so K8s doesn't restart unresponsive container
+  enabled: true
+
+readiness:
+  initialDelaySeconds: 1
+  periodSeconds: 10
+  timeoutSeconds: 180
+  successThreshold: 1
+  failureThreshold: 3
+
+startup:
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  timeoutSeconds: 180
+  successThreshold: 1
+  failureThreshold: 60
+
+service:
+  type: NodePort
+  name: sdc-be
+  internalPort: 8080
+  ports:
+    - name: tcp-api
+      port: 8080
+      port_protocol: http
+      nodePort: '04'
+  annotations:
+    msb.onap.org/service-info: |
+      {{ if .Values.global.msbEnabled -}}[
+        {
+          "serviceName": "sdc-be",
+          "version": "v1",
+          "url": "/sdc/v1",
+          "path":"/sdc/v1",
+          "protocol": "REST",
+          "visualRange":"1",
+          "port": "{{ .Values.service.internalPort }}",
+        }
+      ]{{ end }}
+
+ingress:
+  enabled: false
+  service:
+    - baseaddr: "sdc-be-api"
+      name: "sdc-be"
+      port: 8080
+  config:
+    ssl: "redirect"
+
+serviceMesh:
+  authorizationPolicy:
+    authorizedPrincipals:
+      - serviceAccount: consul-read
+      - serviceAccount: consul-server-read
+      - serviceAccount: modeling-etsicatalog-read
+      - serviceAccount: nbi-read
+      - serviceAccount: oof-has-read
+      - serviceAccount: portal-db-read
+      - serviceAccount: so-cnfm-lcm-read
+      - serviceAccount: so-etsi-sol003-adapter-read
+      - serviceAccount: so-read
+      - serviceAccount: istio-ingress
+        namespace: istio-ingress
+
+# Resource Limit flavor -By Default using small
+flavor: small
+# Segregation for Different environment (Small and Large)
+resources:
+  small:
+    limits:
+      cpu: 1
+      memory: 3Gi
+    requests:
+      cpu: 0.5
+      memory: 3Gi
+  large:
+    limits:
+      cpu: 2
+      memory: 6Gi
+    requests:
+      cpu: 1
+      memory: 6Gi
+  unlimited: {}
+
+#Pods Service Account
+serviceAccount:
+  nameOverride: sdc-be
+  roles:
+    - read
+
+wait_for_job_container:
+  containers:
+    - '{{ include "common.name" . }}-job'
+
+#Log configuration
+log:
+  path: /var/log/onap
+logConfigMapNamePrefix: '{{ include "common.fullname" . }}'

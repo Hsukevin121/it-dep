@@ -1,0 +1,120 @@
+#  ============LICENSE_START=======================================================
+#   Copyright (C) 2021-2023 Nordix Foundation.
+#  ================================================================================
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+#  SPDX-License-Identifier: Apache-2.0
+#  ============LICENSE_END=========================================================
+
+spring:
+  security:
+    user:
+      name: ${RUNTIME_USER}
+      password: ${RUNTIME_PASSWORD}
+  http:
+    converters:
+      preferred-json-mapper: gson
+  datasource:
+    url: jdbc:mariadb://{{ .Values.db.service.name }}:{{ .Values.db.service.internalPort }}/clampacm
+    driverClassName: org.mariadb.jdbc.Driver
+    username: ${SQL_USER}
+    password: ${SQL_PASSWORD}
+    hikari:
+      connectionTimeout: 30000
+      idleTimeout: 600000
+      maxLifetime: 1800000
+      maximumPoolSize: 10
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.onap.policy.common.spring.utils.CustomImplicitNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDB103Dialect
+        format_sql: true
+
+metrics:
+  security:
+    disabled: false
+
+security:
+  enable-csrf: false
+
+server:
+  port: 6969
+  servlet:
+    context-path: /onap/policy/clamp/acm
+  error:
+    path: /error
+  ssl:
+    enabled: false
+
+runtime:
+  participantParameters:
+    heartBeatMs: 120000
+    maxMessageAgeMs: 600000
+    maxStatusWaitMs: 100000
+    updateParameters:
+      maxRetryCount: 3
+      maxWaitMs: 100000
+  topicParameterGroup:
+    topicSources:
+      -
+        useHttps: false
+        fetchTimeout: 15000
+        topic: {{ .Values.global.kafkaTopics.acRuntimeTopic.name }}
+        {{ if .Values.global.useStrimziKafka }}
+        topicCommInfrastructure: kafka
+        servers:
+          - {{ include "common.release" . }}-strimzi-kafka-bootstrap:9092
+        additionalProps:
+          group.id: {{ (first .Values.kafkaUser.acls).name }}
+          allow.auto.create.topics: false
+          security.protocol: SASL_PLAINTEXT
+          sasl.mechanism: {{ .Values.kafkaUser.authenticationType | upper }}
+          sasl.jaas.config: ${SASL_JAAS_CONFIG}
+        {{ else }}
+        topicCommInfrastructure: dmaap
+        servers:
+          - ${topicServer:message-router}
+        {{ end }}
+    topicSinks:
+      -
+        useHttps: false
+        fetchTimeout: 15000
+        topic: {{ .Values.global.kafkaTopics.acRuntimeTopic.name }}
+        {{ if .Values.global.useStrimziKafka }}
+        topicCommInfrastructure: kafka
+        servers:
+          - {{ include "common.release" . }}-strimzi-kafka-bootstrap:9092
+        additionalProps:
+          client.id: {{ (first .Values.kafkaUser.acls).name }}-client-id
+          security.protocol: SASL_PLAINTEXT
+          sasl.mechanism: {{ .Values.kafkaUser.authenticationType | upper }}
+          sasl.jaas.config: ${SASL_JAAS_CONFIG}
+        {{ else }}
+        topicCommInfrastructure: dmaap
+        servers:
+          - ${topicServer:message-router}
+        {{ end }}
+  acmParameters:
+    toscaElementName: {{ .Values.customNaming.toscaElementName }}
+    toscaCompositionName: {{ .Values.customNaming.toscaCompositionName }}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus

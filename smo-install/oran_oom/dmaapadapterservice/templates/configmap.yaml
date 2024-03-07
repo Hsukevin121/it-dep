@@ -1,0 +1,8 @@
+{{ include "common.applicationConfigmap" . }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: {{ include "common.resourceMetadata" (dict "suffix" "type-configmap" "dot" . ) | nindent 2 }}
+data:
+  type_config.json: |
+    {{- (dict "types" .Values.types) | toRawJson | nindent 4 }}
